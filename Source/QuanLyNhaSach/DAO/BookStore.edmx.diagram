@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d7db780774f848559bd5eae8a8a71871" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="BookStoreModel.CHITIETHOADON" Width="1.75" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.CHITIETPHIEUNHAP" Width="1.75" PointX="2.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.CHUCVU" Width="1.5" PointX="9" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.CONGNO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.DAUSACH" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.HOADON" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.KHACHHANG" Width="1.5" PointX="5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.NHACUNGCAP" Width="1.5" PointX="2.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.NHANVIEN" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.PHIEUCHI" Width="1.5" PointX="6.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.PHIEUNHAP" Width="1.5" PointX="4.875" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.PHIEUTHUNO" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.QUYDINH" Width="1.5" PointX="11" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.TAIKHOAN" Width="1.5" PointX="8.875" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.THELOAI" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.TONKHO" Width="1.5" PointX="2.75" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="BookStoreModel.NHANVIENHOADON" />
+        <AssociationConnector Association="BookStoreModel.KHACHHANGCONGNO" />
+        <AssociationConnector Association="BookStoreModel.NHANVIENPHIEUTHUNO" />
+        <AssociationConnector Association="BookStoreModel.KHACHHANGPHIEUTHUNO" />
+        <AssociationConnector Association="BookStoreModel.CHUCVUNHANVIEN" />
+        <AssociationConnector Association="BookStoreModel.NHANVIENTAIKHOAN" />
+        <AssociationConnector Association="BookStoreModel.THELOAIDAUSACH" />
+        <AssociationConnector Association="BookStoreModel.THELOAICHITIETHOADON" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="BookStoreModel.DAUSACHTONKHO" />
+        <AssociationConnector Association="BookStoreModel.DAUSACHCHITIETPHIEUNHAP" />
+        <AssociationConnector Association="BookStoreModel.PHIEUNHAPCHITIETPHIEUNHAP" />
+        <AssociationConnector Association="BookStoreModel.NHACUNGCAPPHIEUNHAP" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="BookStoreModel.PHIEUNHAPPHIEUCHI" />
+        <AssociationConnector Association="BookStoreModel.NHANVIENPHIEUCHI" />
+        <AssociationConnector Association="BookStoreModel.KHACHHANGHOADON" />
+        <AssociationConnector Association="BookStoreModel.DAUSACHCHITIETHOADON" />
+        <AssociationConnector Association="BookStoreModel.HOADONCHITIETHOADON" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

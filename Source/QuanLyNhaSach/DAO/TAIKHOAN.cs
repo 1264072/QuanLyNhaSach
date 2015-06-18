@@ -7,21 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CHITIETPHIEUNHAP
+    public partial class TAIKHOAN
     {
-        public int STT { get; set; }
-        public string MAPN { get; set; }
-        public int MADS { get; set; }
-        public int SOLUONG { get; set; }
-        public decimal DONGIA { get; set; }
-        public decimal THANHTIEN { get; set; }
+        public string USERNAME { get; set; }
+        public string PASSWORD { get; set; }
+        public string MANV { get; set; }
     
-        public virtual PHIEUNHAP PHIEUNHAP { get; set; }
-        public virtual DAUSACH DAUSACH { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

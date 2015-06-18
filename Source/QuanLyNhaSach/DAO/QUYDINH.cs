@@ -7,22 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CHITIETHOADON
+    public partial class QUYDINH
     {
+        public int NHAPTOITHIEU { get; set; }
+        public int TONTRUOCNHAP { get; set; }
+        public int TONSAUBAN { get; set; }
+        public decimal NOTOIDA { get; set; }
+        public bool THUQUANO { get; set; }
         public int STT { get; set; }
-        public string MAHD { get; set; }
-        public int MADS { get; set; }
-        public string MATL { get; set; }
-        public int SOLUONG { get; set; }
-        public decimal DONGIA { get; set; }
-        public decimal THANHTIEN { get; set; }
-    
-        public virtual DAUSACH DAUSACH { get; set; }
-        public virtual THELOAI THELOAI { get; set; }
     }
 }

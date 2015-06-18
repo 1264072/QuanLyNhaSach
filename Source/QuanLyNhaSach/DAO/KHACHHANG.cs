@@ -7,24 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class NHACUNGCAP
+    public partial class KHACHHANG
     {
-        public NHACUNGCAP()
+        public KHACHHANG()
         {
-            this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
+            this.CONGNOes = new HashSet<CONGNO>();
+            this.PHIEUTHUNOes = new HashSet<PHIEUTHUNO>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
-        public string MANCC { get; set; }
-        public string TENNCC { get; set; }
-        public string SDT { get; set; }
+        public string MAKH { get; set; }
+        public string HOTEN { get; set; }
         public string DIACHI { get; set; }
+        public string SDT { get; set; }
         public string EMAIL { get; set; }
+        public bool NO { get; set; }
     
-        public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
+        public virtual ICollection<CONGNO> CONGNOes { get; set; }
+        public virtual ICollection<PHIEUTHUNO> PHIEUTHUNOes { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

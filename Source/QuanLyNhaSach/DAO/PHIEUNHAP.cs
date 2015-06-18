@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
@@ -16,8 +16,8 @@ namespace DTO
     {
         public PHIEUNHAP()
         {
-            this.PHIEUCHIs = new HashSet<PHIEUCHI>();
             this.CHITIETPHIEUNHAPs = new HashSet<CHITIETPHIEUNHAP>();
+            this.PHIEUCHIs = new HashSet<PHIEUCHI>();
         }
     
         public string MAPN { get; set; }
@@ -27,9 +27,8 @@ namespace DTO
         public decimal TONGTIEN { get; set; }
         public decimal CONNO { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
         public virtual ICollection<PHIEUCHI> PHIEUCHIs { get; set; }
-        public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
     }
 }

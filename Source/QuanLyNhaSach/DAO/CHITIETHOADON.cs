@@ -7,21 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CHUCVU
+    public partial class CHITIETHOADON
     {
-        public CHUCVU()
-        {
-            this.NHANVIENs = new HashSet<NHANVIEN>();
-        }
+        public int STT { get; set; }
+        public string MAHD { get; set; }
+        public int MADS { get; set; }
+        public string MATL { get; set; }
+        public int SOLUONG { get; set; }
+        public decimal DONGIA { get; set; }
+        public decimal THANHTIEN { get; set; }
     
-        public string MACV { get; set; }
-        public string TENCV { get; set; }
-    
-        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+        public virtual THELOAI THELOAI { get; set; }
+        public virtual DAUSACH DAUSACH { get; set; }
+        public virtual HOADON HOADON { get; set; }
     }
 }

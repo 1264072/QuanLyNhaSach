@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
@@ -16,10 +16,9 @@ namespace DTO
     {
         public NHANVIEN()
         {
-            this.TAIKHOANs = new HashSet<TAIKHOAN>();
-            this.PHIEUTHUNOes = new HashSet<PHIEUTHUNO>();
             this.HOADONs = new HashSet<HOADON>();
-            this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
+            this.PHIEUTHUNOes = new HashSet<PHIEUTHUNO>();
+            this.TAIKHOANs = new HashSet<TAIKHOAN>();
             this.PHIEUCHIs = new HashSet<PHIEUCHI>();
         }
     
@@ -30,11 +29,10 @@ namespace DTO
         public string EMAIL { get; set; }
         public string MACV { get; set; }
     
+        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<PHIEUTHUNO> PHIEUTHUNOes { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
         public virtual ICollection<TAIKHOAN> TAIKHOANs { get; set; }
-        public virtual ICollection<PHIEUTHUNO> PHIEUTHUNOes { get; set; }
-        public virtual ICollection<HOADON> HOADONs { get; set; }
-        public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
         public virtual ICollection<PHIEUCHI> PHIEUCHIs { get; set; }
     }
 }

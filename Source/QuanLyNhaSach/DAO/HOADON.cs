@@ -7,13 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
     public partial class HOADON
     {
+        public HOADON()
+        {
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
+        }
+    
         public string MAHD { get; set; }
         public string MAKH { get; set; }
         public System.DateTime NGAYLAP { get; set; }
@@ -22,7 +27,8 @@ namespace DTO
         public decimal TIENTRA { get; set; }
         public decimal TIENNO { get; set; }
     
-        public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
     }
 }

@@ -7,22 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PHIEUTHUNO
+    public partial class CHITIETPHIEUNHAP
     {
-        public string MAPT { get; set; }
-        public string MAKH { get; set; }
-        public System.DateTime NGAYLAP { get; set; }
-        public decimal TIENNO { get; set; }
-        public decimal TIENTHU { get; set; }
-        public decimal CONNO { get; set; }
-        public string MANV { get; set; }
+        public int STT { get; set; }
+        public string MAPN { get; set; }
+        public int MADS { get; set; }
+        public int SOLUONG { get; set; }
+        public decimal DONGIA { get; set; }
+        public decimal THANHTIEN { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual DAUSACH DAUSACH { get; set; }
+        public virtual PHIEUNHAP PHIEUNHAP { get; set; }
     }
 }

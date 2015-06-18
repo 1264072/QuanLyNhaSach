@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CONGNO
+    public partial class TONKHO
     {
         public int STT { get; set; }
-        public string MAKH { get; set; }
+        public int MADS { get; set; }
         public System.DateTime NGAYPHATSINH { get; set; }
-        public decimal NODAU { get; set; }
-        public decimal PHATSINH { get; set; }
-        public decimal NOCUOI { get; set; }
+        public int TONDAU { get; set; }
+        public int PHATSINH { get; set; }
+        public int TONCUOI { get; set; }
     
-        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual DAUSACH DAUSACH { get; set; }
     }
 }

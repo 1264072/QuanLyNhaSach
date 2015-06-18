@@ -7,20 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DTO
+namespace DAO
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TONKHO
+    public partial class THELOAI
     {
-        public int STT { get; set; }
-        public int MADS { get; set; }
-        public System.DateTime NGAYPHATSINH { get; set; }
-        public int TONDAU { get; set; }
-        public int PHATSINH { get; set; }
-        public int TONCUOI { get; set; }
+        public THELOAI()
+        {
+            this.DAUSACHes = new HashSet<DAUSACH>();
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
+        }
     
-        public virtual DAUSACH DAUSACH { get; set; }
+        public string MATL { get; set; }
+        public string TENTL { get; set; }
+    
+        public virtual ICollection<DAUSACH> DAUSACHes { get; set; }
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
     }
 }

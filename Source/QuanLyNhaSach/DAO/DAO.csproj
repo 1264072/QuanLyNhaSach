@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +48,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookStore.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookStore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETHOADON.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETPHIEUNHAP.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHUCVU.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONGNO.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAUSACH.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOADON.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHACHHANG.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHACUNGCAP.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUCHI.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUNHAP.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUTHUNO.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QUYDINH.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoanDAO.cs" />
+    <Compile Include="THELOAI.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TONKHO.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BookStore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookStore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="BookStore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+      <LastGenOutput>BookStore.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BookStore.edmx.diagram">
+      <DependentUpon>BookStore.edmx</DependentUpon>
+    </None>
+    <None Include="BookStore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+      <LastGenOutput>BookStore.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
