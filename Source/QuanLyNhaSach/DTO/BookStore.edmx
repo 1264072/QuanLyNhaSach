@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHITIETHOADON">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAHD" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MADS" Type="int" Nullable="false" />
+          <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="DONGIA" Type="money" Nullable="false" />
+          <Property Name="THANHTIEN" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHITIETPHIEUNHAP">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MADS" Type="int" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="DONGIA" Type="money" Nullable="false" />
+          <Property Name="THANHTIEN" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUCVU">
+          <Key>
+            <PropertyRef Name="MACV" />
+          </Key>
+          <Property Name="MACV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENCV" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONGNO">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NGAYPHATSINH" Type="date" Nullable="false" />
+          <Property Name="NODAU" Type="money" Nullable="false" />
+          <Property Name="PHATSINH" Type="money" Nullable="false" />
+          <Property Name="NOCUOI" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DAUSACH">
+          <Key>
+            <PropertyRef Name="MADS" />
+          </Key>
+          <Property Name="MADS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENSACH" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TACGIA" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="DONGIA" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="MAHD" />
+          </Key>
+          <Property Name="MAHD" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NGAYLAP" Type="date" Nullable="false" />
+          <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TONGTIEN" Type="money" Nullable="false" />
+          <Property Name="TIENTRA" Type="money" Nullable="false" />
+          <Property Name="TIENNO" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NHACUNGCAP">
+          <Key>
+            <PropertyRef Name="MANCC" />
+          </Key>
+          <Property Name="MANCC" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MACV" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUCHI">
+          <Key>
+            <PropertyRef Name="MAPC" />
+          </Key>
+          <Property Name="MAPC" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NGAYLAP" Type="date" Nullable="false" />
+          <Property Name="TIENCHI" Type="money" Nullable="false" />
+          <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUNHAP">
+          <Key>
+            <PropertyRef Name="MAPN" />
+          </Key>
+          <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NGAYLAP" Type="date" Nullable="false" />
+          <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MANCC" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TONGTIEN" Type="money" Nullable="false" />
+          <Property Name="CONNO" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUTHUNO">
+          <Key>
+            <PropertyRef Name="MAPT" />
+          </Key>
+          <Property Name="MAPT" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NGAYLAP" Type="date" Nullable="false" />
+          <Property Name="TIENNO" Type="money" Nullable="false" />
+          <Property Name="TIENTHU" Type="money" Nullable="false" />
+          <Property Name="CONNO" Type="money" Nullable="false" />
+          <Property Name="MANV" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QUYDINH">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="NHAPTOITHIEU" Type="int" Nullable="false" />
+          <Property Name="TONTRUOCNHAP" Type="int" Nullable="false" />
+          <Property Name="TONSAUBAN" Type="int" Nullable="false" />
+          <Property Name="NOTOIDA" Type="money" Nullable="false" />
+          <Property Name="THUQUANO" Type="bit" Nullable="false" />
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THELOAI">
+          <Key>
+            <PropertyRef Name="MATL" />
+          </Key>
+          <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENTL" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TONKHO">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MADS" Type="int" Nullable="false" />
+          <Property Name="NGAYPHATSINH" Type="date" Nullable="false" />
+          <Property Name="TONDAU" Type="int" Nullable="false" />
+          <Property Name="PHATSINH" Type="int" Nullable="false" />
+          <Property Name="TONCUOI" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BookStoreModelStoreContainer">
+          <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETPHIEUNHAP" EntityType="Self.CHITIETPHIEUNHAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONGNO" EntityType="Self.CONGNO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DAUSACH" EntityType="Self.DAUSACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUCHI" EntityType="Self.PHIEUCHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUTHUNO" EntityType="Self.PHIEUTHUNO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUYDINH" EntityType="Self.QUYDINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TONKHO" EntityType="Self.TONKHO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BookStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BookStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHITIETHOADONs" EntityType="BookStoreModel.CHITIETHOADON" />
+          <EntitySet Name="CHITIETPHIEUNHAPs" EntityType="BookStoreModel.CHITIETPHIEUNHAP" />
+          <EntitySet Name="CHUCVUs" EntityType="BookStoreModel.CHUCVU" />
+          <EntitySet Name="CONGNOes" EntityType="BookStoreModel.CONGNO" />
+          <EntitySet Name="DAUSACHes" EntityType="BookStoreModel.DAUSACH" />
+          <EntitySet Name="HOADONs" EntityType="BookStoreModel.HOADON" />
+          <EntitySet Name="KHACHHANGs" EntityType="BookStoreModel.KHACHHANG" />
+          <EntitySet Name="NHACUNGCAPs" EntityType="BookStoreModel.NHACUNGCAP" />
+          <EntitySet Name="NHANVIENs" EntityType="BookStoreModel.NHANVIEN" />
+          <EntitySet Name="PHIEUCHIs" EntityType="BookStoreModel.PHIEUCHI" />
+          <EntitySet Name="PHIEUNHAPs" EntityType="BookStoreModel.PHIEUNHAP" />
+          <EntitySet Name="PHIEUTHUNOes" EntityType="BookStoreModel.PHIEUTHUNO" />
+          <EntitySet Name="QUYDINHs" EntityType="BookStoreModel.QUYDINH" />
+          <EntitySet Name="TAIKHOANs" EntityType="BookStoreModel.TAIKHOAN" />
+          <EntitySet Name="THELOAIs" EntityType="BookStoreModel.THELOAI" />
+          <EntitySet Name="TONKHOes" EntityType="BookStoreModel.TONKHO" />
+          <AssociationSet Name="CHUCVUNHANVIEN" Association="BookStoreModel.CHUCVUNHANVIEN">
+            <End Role="CHUCVU" EntitySet="CHUCVUs" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="NHANVIENTAIKHOAN" Association="BookStoreModel.NHANVIENTAIKHOAN">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+          </AssociationSet>
+          <AssociationSet Name="NHANVIENPHIEUTHUNO" Association="BookStoreModel.NHANVIENPHIEUTHUNO">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="PHIEUTHUNO" EntitySet="PHIEUTHUNOes" />
+          </AssociationSet>
+          <AssociationSet Name="KHACHHANGPHIEUTHUNO" Association="BookStoreModel.KHACHHANGPHIEUTHUNO">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="PHIEUTHUNO" EntitySet="PHIEUTHUNOes" />
+          </AssociationSet>
+          <AssociationSet Name="KHACHHANGHOADON" Association="BookStoreModel.KHACHHANGHOADON">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="NHANVIENHOADON" Association="BookStoreModel.NHANVIENHOADON">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="KHACHHANGCONGNO" Association="BookStoreModel.KHACHHANGCONGNO">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="CONGNO" EntitySet="CONGNOes" />
+          </AssociationSet>
+          <AssociationSet Name="NHANVIENPHIEUNHAP" Association="BookStoreModel.NHANVIENPHIEUNHAP">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+          </AssociationSet>
+          <AssociationSet Name="NHACUNGCAPPHIEUNHAP" Association="BookStoreModel.NHACUNGCAPPHIEUNHAP">
+            <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+          </AssociationSet>
+          <AssociationSet Name="DAUSACHCHITIETHOADON" Association="BookStoreModel.DAUSACHCHITIETHOADON">
+            <End Role="DAUSACH" EntitySet="DAUSACHes" />
+            <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="THELOAICHITIETHOADON" Association="BookStoreModel.THELOAICHITIETHOADON">
+            <End Role="THELOAI" EntitySet="THELOAIs" />
+            <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="DAUSACHTONKHO" Association="BookStoreModel.DAUSACHTONKHO">
+            <End Role="DAUSACH" EntitySet="DAUSACHes" />
+            <End Role="TONKHO" EntitySet="TONKHOes" />
+          </AssociationSet>
+          <AssociationSet Name="THELOAIDAUSACH" Association="BookStoreModel.THELOAIDAUSACH">
+            <End Role="THELOAI" EntitySet="THELOAIs" />
+            <End Role="DAUSACH" EntitySet="DAUSACHes" />
+          </AssociationSet>
+          <AssociationSet Name="NHANVIENPHIEUCHI" Association="BookStoreModel.NHANVIENPHIEUCHI">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="PHIEUCHI" EntitySet="PHIEUCHIs" />
+          </AssociationSet>
+          <AssociationSet Name="PHIEUNHAPPHIEUCHI" Association="BookStoreModel.PHIEUNHAPPHIEUCHI">
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+            <End Role="PHIEUCHI" EntitySet="PHIEUCHIs" />
+          </AssociationSet>
+          <AssociationSet Name="PHIEUNHAPCHITIETPHIEUNHAP" Association="BookStoreModel.PHIEUNHAPCHITIETPHIEUNHAP">
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+            <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+          </AssociationSet>
+          <AssociationSet Name="DAUSACHCHITIETPHIEUNHAP" Association="BookStoreModel.DAUSACHCHITIETPHIEUNHAP">
+            <End Role="DAUSACH" EntitySet="DAUSACHes" />
+            <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CHITIETHOADON">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAHD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MADS" Type="Int32" Nullable="false" />
+          <Property Name="MATL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="DONGIA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="THANHTIEN" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="DAUSACH" Relationship="BookStoreModel.DAUSACHCHITIETHOADON" FromRole="CHITIETHOADON" ToRole="DAUSACH" />
+          <NavigationProperty Name="THELOAI" Relationship="BookStoreModel.THELOAICHITIETHOADON" FromRole="CHITIETHOADON" ToRole="THELOAI" />
+        </EntityType>
+        <EntityType Name="CHITIETPHIEUNHAP">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAPN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MADS" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="DONGIA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="THANHTIEN" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="PHIEUNHAP" Relationship="BookStoreModel.PHIEUNHAPCHITIETPHIEUNHAP" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAP" />
+          <NavigationProperty Name="DAUSACH" Relationship="BookStoreModel.DAUSACHCHITIETPHIEUNHAP" FromRole="CHITIETPHIEUNHAP" ToRole="DAUSACH" />
+        </EntityType>
+        <EntityType Name="CHUCVU">
+          <Key>
+            <PropertyRef Name="MACV" />
+          </Key>
+          <Property Name="MACV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TENCV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIENs" Relationship="BookStoreModel.CHUCVUNHANVIEN" FromRole="CHUCVU" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="CONGNO">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYPHATSINH" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NODAU" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PHATSINH" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NOCUOI" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="KHACHHANG" Relationship="BookStoreModel.KHACHHANGCONGNO" FromRole="CONGNO" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="DAUSACH">
+          <Key>
+            <PropertyRef Name="MADS" />
+          </Key>
+          <Property Name="MADS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENSACH" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MATL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TACGIA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="DONGIA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="CHITIETHOADONs" Relationship="BookStoreModel.DAUSACHCHITIETHOADON" FromRole="DAUSACH" ToRole="CHITIETHOADON" />
+          <NavigationProperty Name="TONKHOes" Relationship="BookStoreModel.DAUSACHTONKHO" FromRole="DAUSACH" ToRole="TONKHO" />
+          <NavigationProperty Name="THELOAI" Relationship="BookStoreModel.THELOAIDAUSACH" FromRole="DAUSACH" ToRole="THELOAI" />
+          <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="BookStoreModel.DAUSACHCHITIETPHIEUNHAP" FromRole="DAUSACH" ToRole="CHITIETPHIEUNHAP" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="MAHD" />
+          </Key>
+          <Property Name="MAHD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TONGTIEN" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TIENTRA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TIENNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="KHACHHANG" Relationship="BookStoreModel.KHACHHANGHOADON" FromRole="HOADON" ToRole="KHACHHANG" />
+          <NavigationProperty Name="NHANVIEN" Relationship="BookStoreModel.NHANVIENHOADON" FromRole="HOADON" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HOTEN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PHIEUTHUNOes" Relationship="BookStoreModel.KHACHHANGPHIEUTHUNO" FromRole="KHACHHANG" ToRole="PHIEUTHUNO" />
+          <NavigationProperty Name="HOADONs" Relationship="BookStoreModel.KHACHHANGHOADON" FromRole="KHACHHANG" ToRole="HOADON" />
+          <NavigationProperty Name="CONGNOes" Relationship="BookStoreModel.KHACHHANGCONGNO" FromRole="KHACHHANG" ToRole="CONGNO" />
+        </EntityType>
+        <EntityType Name="NHACUNGCAP">
+          <Key>
+            <PropertyRef Name="MANCC" />
+          </Key>
+          <Property Name="MANCC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TENNCC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DIACHI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEUNHAPs" Relationship="BookStoreModel.NHACUNGCAPPHIEUNHAP" FromRole="NHACUNGCAP" ToRole="PHIEUNHAP" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HOTEN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DIACHI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MACV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CHUCVU" Relationship="BookStoreModel.CHUCVUNHANVIEN" FromRole="NHANVIEN" ToRole="CHUCVU" />
+          <NavigationProperty Name="TAIKHOANs" Relationship="BookStoreModel.NHANVIENTAIKHOAN" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+          <NavigationProperty Name="PHIEUTHUNOes" Relationship="BookStoreModel.NHANVIENPHIEUTHUNO" FromRole="NHANVIEN" ToRole="PHIEUTHUNO" />
+          <NavigationProperty Name="HOADONs" Relationship="BookStoreModel.NHANVIENHOADON" FromRole="NHANVIEN" ToRole="HOADON" />
+          <NavigationProperty Name="PHIEUNHAPs" Relationship="BookStoreModel.NHANVIENPHIEUNHAP" FromRole="NHANVIEN" ToRole="PHIEUNHAP" />
+          <NavigationProperty Name="PHIEUCHIs" Relationship="BookStoreModel.NHANVIENPHIEUCHI" FromRole="NHANVIEN" ToRole="PHIEUCHI" />
+        </EntityType>
+        <EntityType Name="PHIEUCHI">
+          <Key>
+            <PropertyRef Name="MAPC" />
+          </Key>
+          <Property Name="MAPC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TIENCHI" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MAPN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NHANVIEN" Relationship="BookStoreModel.NHANVIENPHIEUCHI" FromRole="PHIEUCHI" ToRole="NHANVIEN" />
+          <NavigationProperty Name="PHIEUNHAP" Relationship="BookStoreModel.PHIEUNHAPPHIEUCHI" FromRole="PHIEUCHI" ToRole="PHIEUNHAP" />
+        </EntityType>
+        <EntityType Name="PHIEUNHAP">
+          <Key>
+            <PropertyRef Name="MAPN" />
+          </Key>
+          <Property Name="MAPN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MANCC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TONGTIEN" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CONNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="NHANVIEN" Relationship="BookStoreModel.NHANVIENPHIEUNHAP" FromRole="PHIEUNHAP" ToRole="NHANVIEN" />
+          <NavigationProperty Name="NHACUNGCAP" Relationship="BookStoreModel.NHACUNGCAPPHIEUNHAP" FromRole="PHIEUNHAP" ToRole="NHACUNGCAP" />
+          <NavigationProperty Name="PHIEUCHIs" Relationship="BookStoreModel.PHIEUNHAPPHIEUCHI" FromRole="PHIEUNHAP" ToRole="PHIEUCHI" />
+          <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="BookStoreModel.PHIEUNHAPCHITIETPHIEUNHAP" FromRole="PHIEUNHAP" ToRole="CHITIETPHIEUNHAP" />
+        </EntityType>
+        <EntityType Name="PHIEUTHUNO">
+          <Key>
+            <PropertyRef Name="MAPT" />
+          </Key>
+          <Property Name="MAPT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TIENNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TIENTHU" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CONNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NHANVIEN" Relationship="BookStoreModel.NHANVIENPHIEUTHUNO" FromRole="PHIEUTHUNO" ToRole="NHANVIEN" />
+          <NavigationProperty Name="KHACHHANG" Relationship="BookStoreModel.KHACHHANGPHIEUTHUNO" FromRole="PHIEUTHUNO" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="QUYDINH">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="NHAPTOITHIEU" Type="Int32" Nullable="false" />
+          <Property Name="TONTRUOCNHAP" Type="Int32" Nullable="false" />
+          <Property Name="TONSAUBAN" Type="Int32" Nullable="false" />
+          <Property Name="NOTOIDA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="THUQUANO" Type="Boolean" Nullable="false" />
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MANV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NHANVIEN" Relationship="BookStoreModel.NHANVIENTAIKHOAN" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="THELOAI">
+          <Key>
+            <PropertyRef Name="MATL" />
+          </Key>
+          <Property Name="MATL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TENTL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHITIETHOADONs" Relationship="BookStoreModel.THELOAICHITIETHOADON" FromRole="THELOAI" ToRole="CHITIETHOADON" />
+          <NavigationProperty Name="DAUSACHes" Relationship="BookStoreModel.THELOAIDAUSACH" FromRole="THELOAI" ToRole="DAUSACH" />
+        </EntityType>
+        <EntityType Name="TONKHO">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MADS" Type="Int32" Nullable="false" />
+          <Property Name="NGAYPHATSINH" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TONDAU" Type="Int32" Nullable="false" />
+          <Property Name="PHATSINH" Type="Int32" Nullable="false" />
+          <Property Name="TONCUOI" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DAUSACH" Relationship="BookStoreModel.DAUSACHTONKHO" FromRole="TONKHO" ToRole="DAUSACH" />
+        </EntityType>
+        <Association Name="CHUCVUNHANVIEN">
+          <End Type="BookStoreModel.CHUCVU" Role="CHUCVU" Multiplicity="1" />
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUCVU">
+              <PropertyRef Name="MACV" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="MACV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHANVIENTAIKHOAN">
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="BookStoreModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHANVIENPHIEUTHUNO">
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUTHUNO" Role="PHIEUTHUNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="PHIEUTHUNO">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KHACHHANGPHIEUTHUNO">
+          <End Type="BookStoreModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUTHUNO" Role="PHIEUTHUNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="PHIEUTHUNO">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KHACHHANGHOADON">
+          <End Type="BookStoreModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
+          <End Type="BookStoreModel.HOADON" Role="HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHANVIENHOADON">
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="BookStoreModel.HOADON" Role="HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KHACHHANGCONGNO">
+          <End Type="BookStoreModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
+          <End Type="BookStoreModel.CONGNO" Role="CONGNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="CONGNO">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHANVIENPHIEUNHAP">
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUNHAP" Role="PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHACUNGCAPPHIEUNHAP">
+          <End Type="BookStoreModel.NHACUNGCAP" Role="NHACUNGCAP" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUNHAP" Role="PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHACUNGCAP">
+              <PropertyRef Name="MANCC" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MANCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DAUSACHCHITIETHOADON">
+          <End Type="BookStoreModel.DAUSACH" Role="DAUSACH" Multiplicity="1" />
+          <End Type="BookStoreModel.CHITIETHOADON" Role="CHITIETHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DAUSACH">
+              <PropertyRef Name="MADS" />
+            </Principal>
+            <Dependent Role="CHITIETHOADON">
+              <PropertyRef Name="MADS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="THELOAICHITIETHOADON">
+          <End Type="BookStoreModel.THELOAI" Role="THELOAI" Multiplicity="1" />
+          <End Type="BookStoreModel.CHITIETHOADON" Role="CHITIETHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAI">
+              <PropertyRef Name="MATL" />
+            </Principal>
+            <Dependent Role="CHITIETHOADON">
+              <PropertyRef Name="MATL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DAUSACHTONKHO">
+          <End Type="BookStoreModel.DAUSACH" Role="DAUSACH" Multiplicity="1" />
+          <End Type="BookStoreModel.TONKHO" Role="TONKHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DAUSACH">
+              <PropertyRef Name="MADS" />
+            </Principal>
+            <Dependent Role="TONKHO">
+              <PropertyRef Name="MADS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="THELOAIDAUSACH">
+          <End Type="BookStoreModel.THELOAI" Role="THELOAI" Multiplicity="1" />
+          <End Type="BookStoreModel.DAUSACH" Role="DAUSACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAI">
+              <PropertyRef Name="MATL" />
+            </Principal>
+            <Dependent Role="DAUSACH">
+              <PropertyRef Name="MATL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NHANVIENPHIEUCHI">
+          <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUCHI" Role="PHIEUCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="PHIEUCHI">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PHIEUNHAPPHIEUCHI">
+          <End Type="BookStoreModel.PHIEUNHAP" Role="PHIEUNHAP" Multiplicity="1" />
+          <End Type="BookStoreModel.PHIEUCHI" Role="PHIEUCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUNHAP">
+              <PropertyRef Name="MAPN" />
+            </Principal>
+            <Dependent Role="PHIEUCHI">
+              <PropertyRef Name="MAPN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PHIEUNHAPCHITIETPHIEUNHAP">
+          <End Type="BookStoreModel.PHIEUNHAP" Role="PHIEUNHAP" Multiplicity="1" />
+          <End Type="BookStoreModel.CHITIETPHIEUNHAP" Role="CHITIETPHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUNHAP">
+              <PropertyRef Name="MAPN" />
+            </Principal>
+            <Dependent Role="CHITIETPHIEUNHAP">
+              <PropertyRef Name="MAPN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DAUSACHCHITIETPHIEUNHAP">
+          <End Type="BookStoreModel.DAUSACH" Role="DAUSACH" Multiplicity="1" />
+          <End Type="BookStoreModel.CHITIETPHIEUNHAP" Role="CHITIETPHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DAUSACH">
+              <PropertyRef Name="MADS" />
+            </Principal>
+            <Dependent Role="CHITIETPHIEUNHAP">
+              <PropertyRef Name="MADS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities">
+          <EntitySetMapping Name="CHITIETHOADONs">
+            <EntityTypeMapping TypeName="BookStoreModel.CHITIETHOADON">
+              <MappingFragment StoreEntitySet="CHITIETHOADON">
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="MATL" ColumnName="MATL" />
+                <ScalarProperty Name="MADS" ColumnName="MADS" />
+                <ScalarProperty Name="MAHD" ColumnName="MAHD" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETPHIEUNHAPs">
+            <EntityTypeMapping TypeName="BookStoreModel.CHITIETPHIEUNHAP">
+              <MappingFragment StoreEntitySet="CHITIETPHIEUNHAP">
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="MADS" ColumnName="MADS" />
+                <ScalarProperty Name="MAPN" ColumnName="MAPN" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUCVUs">
+            <EntityTypeMapping TypeName="BookStoreModel.CHUCVU">
+              <MappingFragment StoreEntitySet="CHUCVU">
+                <ScalarProperty Name="TENCV" ColumnName="TENCV" />
+                <ScalarProperty Name="MACV" ColumnName="MACV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONGNOes">
+            <EntityTypeMapping TypeName="BookStoreModel.CONGNO">
+              <MappingFragment StoreEntitySet="CONGNO">
+                <ScalarProperty Name="NOCUOI" ColumnName="NOCUOI" />
+                <ScalarProperty Name="PHATSINH" ColumnName="PHATSINH" />
+                <ScalarProperty Name="NODAU" ColumnName="NODAU" />
+                <ScalarProperty Name="NGAYPHATSINH" ColumnName="NGAYPHATSINH" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DAUSACHes">
+            <EntityTypeMapping TypeName="BookStoreModel.DAUSACH">
+              <MappingFragment StoreEntitySet="DAUSACH">
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="TACGIA" ColumnName="TACGIA" />
+                <ScalarProperty Name="MATL" ColumnName="MATL" />
+                <ScalarProperty Name="TENSACH" ColumnName="TENSACH" />
+                <ScalarProperty Name="MADS" ColumnName="MADS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONs">
+            <EntityTypeMapping TypeName="BookStoreModel.HOADON">
+              <MappingFragment StoreEntitySet="HOADON">
+                <ScalarProperty Name="TIENNO" ColumnName="TIENNO" />
+                <ScalarProperty Name="TIENTRA" ColumnName="TIENTRA" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="MAHD" ColumnName="MAHD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="BookStoreModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHACUNGCAPs">
+            <EntityTypeMapping TypeName="BookStoreModel.NHACUNGCAP">
+              <MappingFragment StoreEntitySet="NHACUNGCAP">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="TENNCC" ColumnName="TENNCC" />
+                <ScalarProperty Name="MANCC" ColumnName="MANCC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="BookStoreModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="MACV" ColumnName="MACV" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUCHIs">
+            <EntityTypeMapping TypeName="BookStoreModel.PHIEUCHI">
+              <MappingFragment StoreEntitySet="PHIEUCHI">
+                <ScalarProperty Name="MAPN" ColumnName="MAPN" />
+                <ScalarProperty Name="TIENCHI" ColumnName="TIENCHI" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="MAPC" ColumnName="MAPC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUNHAPs">
+            <EntityTypeMapping TypeName="BookStoreModel.PHIEUNHAP">
+              <MappingFragment StoreEntitySet="PHIEUNHAP">
+                <ScalarProperty Name="CONNO" ColumnName="CONNO" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="MANCC" ColumnName="MANCC" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="MAPN" ColumnName="MAPN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUTHUNOes">
+            <EntityTypeMapping TypeName="BookStoreModel.PHIEUTHUNO">
+              <MappingFragment StoreEntitySet="PHIEUTHUNO">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="CONNO" ColumnName="CONNO" />
+                <ScalarProperty Name="TIENTHU" ColumnName="TIENTHU" />
+                <ScalarProperty Name="TIENNO" ColumnName="TIENNO" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="MAPT" ColumnName="MAPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUYDINHs">
+            <EntityTypeMapping TypeName="BookStoreModel.QUYDINH">
+              <MappingFragment StoreEntitySet="QUYDINH">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="THUQUANO" ColumnName="THUQUANO" />
+                <ScalarProperty Name="NOTOIDA" ColumnName="NOTOIDA" />
+                <ScalarProperty Name="TONSAUBAN" ColumnName="TONSAUBAN" />
+                <ScalarProperty Name="TONTRUOCNHAP" ColumnName="TONTRUOCNHAP" />
+                <ScalarProperty Name="NHAPTOITHIEU" ColumnName="NHAPTOITHIEU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOANs">
+            <EntityTypeMapping TypeName="BookStoreModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAIs">
+            <EntityTypeMapping TypeName="BookStoreModel.THELOAI">
+              <MappingFragment StoreEntitySet="THELOAI">
+                <ScalarProperty Name="TENTL" ColumnName="TENTL" />
+                <ScalarProperty Name="MATL" ColumnName="MATL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TONKHOes">
+            <EntityTypeMapping TypeName="BookStoreModel.TONKHO">
+              <MappingFragment StoreEntitySet="TONKHO">
+                <ScalarProperty Name="TONCUOI" ColumnName="TONCUOI" />
+                <ScalarProperty Name="PHATSINH" ColumnName="PHATSINH" />
+                <ScalarProperty Name="TONDAU" ColumnName="TONDAU" />
+                <ScalarProperty Name="NGAYPHATSINH" ColumnName="NGAYPHATSINH" />
+                <ScalarProperty Name="MADS" ColumnName="MADS" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
