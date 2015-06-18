@@ -90,6 +90,9 @@
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="NHOMATKHAU.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="PHIEUCHI.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
@@ -139,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{731b7e25-3991-498e-888e-6df233c38929}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

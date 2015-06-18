@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BUS;
+using DTO;
 
 namespace GUI
 {
@@ -22,6 +24,15 @@ namespace GUI
         public DangNhap()
         {
             InitializeComponent();
+            if (TaiKhoanBUS.LayTaiKhoan() != null)
+            {
+                if (TaiKhoanBUS.LayTaiKhoan().TRANGTHAI)
+                {
+                    txtTenDangNhap.Text = TaiKhoanBUS.LayTaiKhoan().USERNAME;
+                    txtMatKhau.Password = TaiKhoanBUS.LayTaiKhoan().PASSWORD;
+                    chkGhiNho.IsChecked = true;
+                }
+            }
         }
 
         private void btnThoat_Click(object sender, RoutedEventArgs e)
@@ -31,7 +42,26 @@ namespace GUI
 
         private void btnDangNhap_Click(object sender, RoutedEventArgs e)
         {
+            string username = txtTenDangNhap.Text;
+            string password = txtMatKhau.Password;
 
+            if (TaiKhoanBUS.DangNhap(username, password))
+            {
+                if (chkGhiNho.IsChecked == true)
+                {
+                    TaiKhoanBUS.GhiNhoTaiKhoan(username, password, true);
+                    lbWarning.Text = "";
+                }
+                else
+                {
+                    TaiKhoanBUS.GhiNhoTaiKhoan(username, password, false);
+                    lbWarning.Text = "";
+                }
+            }
+            else
+            {
+                lbWarning.Text = "Sai tài khoản hoặc mật khẩu";
+            }
         }
     }
 }

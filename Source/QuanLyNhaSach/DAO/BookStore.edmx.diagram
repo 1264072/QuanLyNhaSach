@@ -40,6 +40,7 @@
         <AssociationConnector Association="BookStoreModel.KHACHHANGHOADON" />
         <AssociationConnector Association="BookStoreModel.DAUSACHCHITIETHOADON" />
         <AssociationConnector Association="BookStoreModel.HOADONCHITIETHOADON" />
+        <EntityTypeShape EntityType="BookStoreModel.NHOMATKHAU" Width="1.5" PointX="9.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

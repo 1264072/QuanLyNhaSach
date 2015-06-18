@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CHITIETHOADON">
           <Key>
             <PropertyRef Name="STT" />
@@ -101,6 +101,15 @@
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="MACV" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="NHOMATKHAU">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="PHIEUCHI">
           <Key>
             <PropertyRef Name="MAPC" />
@@ -181,6 +190,7 @@
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHOMATKHAU" EntityType="Self.NHOMATKHAU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUCHI" EntityType="Self.PHIEUCHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUTHUNO" EntityType="Self.PHIEUTHUNO" Schema="dbo" store:Type="Tables" />
@@ -189,8 +199,7 @@
           <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TONKHO" EntityType="Self.TONKHO" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BookStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -479,6 +488,7 @@
             <End Role="HOADON" EntitySet="HOADONs" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
           </AssociationSet>
+          <EntitySet Name="NHOMATKHAUs" EntityType="BookStoreModel.NHOMATKHAU" />
         </EntityContainer>
         <Association Name="NHANVIENHOADON">
           <End Type="BookStoreModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
@@ -684,6 +694,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="NHOMATKHAU">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TRANGTHAI" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -869,6 +888,16 @@
                 <ScalarProperty Name="TONDAU" ColumnName="TONDAU" />
                 <ScalarProperty Name="PHATSINH" ColumnName="PHATSINH" />
                 <ScalarProperty Name="TONCUOI" ColumnName="TONCUOI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHOMATKHAUs">
+            <EntityTypeMapping TypeName="BookStoreModel.NHOMATKHAU">
+              <MappingFragment StoreEntitySet="NHOMATKHAU">
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="MA" ColumnName="MA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

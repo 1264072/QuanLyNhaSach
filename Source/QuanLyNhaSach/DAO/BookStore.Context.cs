@@ -41,5 +41,6 @@ namespace DAO
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THELOAI> THELOAIs { get; set; }
         public virtual DbSet<TONKHO> TONKHOes { get; set; }
+        public virtual DbSet<NHOMATKHAU> NHOMATKHAUs { get; set; }
     }
 }
