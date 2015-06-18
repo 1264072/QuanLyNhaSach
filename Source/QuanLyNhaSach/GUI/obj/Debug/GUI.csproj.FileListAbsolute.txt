@@ -1,0 +1,15 @@
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\bin\Debug\GUI.exe.config
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\bin\Debug\GUI.exe
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\bin\Debug\GUI.pdb
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\DangNhap.baml
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\DangNhap.g.cs
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\App.g.cs
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI_MarkupCompile.cache
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.g.resources
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.exe
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.pdb
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienQuanLy.baml
+E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienQuanLy.g.cs
