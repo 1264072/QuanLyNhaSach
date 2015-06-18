@@ -13,3 +13,6 @@ E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.exe
 E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.pdb
 E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienQuanLy.baml
 E:\LTUDQL - C#\Project\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienQuanLy.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\bin\Debug\GUI.exe.config
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.exe
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\GUI.pdb

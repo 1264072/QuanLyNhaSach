@@ -120,6 +120,12 @@ namespace GUI {
             return;
             case 4:
             this.btnDangNhap = ((System.Windows.Controls.Button)(target));
+            
+            #line 22 "..\..\DangNhap.xaml"
+            this.btnDangNhap.Click += new System.Windows.RoutedEventHandler(this.btnDangNhap_Click);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.btnThoat = ((System.Windows.Controls.Button)(target));

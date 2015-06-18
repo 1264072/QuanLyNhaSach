@@ -28,5 +28,10 @@ namespace GUI
         {
             App.Current.Shutdown();
         }
+
+        private void btnDangNhap_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

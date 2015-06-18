@@ -19,7 +19,7 @@
             <CheckBox Content="Ghi nhớ" Name="chkGhiNho" Margin="122,0,0,0" Cursor="Hand" VerticalContentAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal" Margin="80,10,5,0" HorizontalAlignment="Center">
-                <Button Content="Đăng nhập" Name="btnDangNhap" Width="80" Cursor="Hand"></Button>
+                <Button Content="Đăng nhập" Name="btnDangNhap" Width="80" Cursor="Hand" Click="btnDangNhap_Click"></Button>
                 <Button Content="Thoát" Name="btnThoat" Width="80" Margin="10,0,0,0" Cursor="Hand" Click="btnThoat_Click"></Button>
             </StackPanel>
         </StackPanel>
