@@ -66,46 +66,58 @@
     <Compile Include="CHITIETHOADON.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietHoaDonDAO.cs" />
     <Compile Include="CHITIETPHIEUNHAP.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietPhieuNhapDAO.cs" />
     <Compile Include="CHUCVU.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
     <Compile Include="CONGNO.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="CongNoDAO.cs" />
     <Compile Include="DAUSACH.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="DauSachDAO.cs" />
     <Compile Include="HOADON.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KHACHHANG.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="KhachHangDAO.cs" />
     <Compile Include="NHACUNGCAP.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="NhaCungCapDAO.cs" />
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienDAO.cs" />
     <Compile Include="NHOMATKHAU.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
     <Compile Include="PHIEUCHI.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhieuChiDAO.cs" />
     <Compile Include="PHIEUNHAP.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhieuNhapDAO.cs" />
     <Compile Include="PHIEUTHUNO.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhieuThuNoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QUYDINH.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="QuyDinhDAO.cs" />
     <Compile Include="TAIKHOAN.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
@@ -113,9 +125,11 @@
     <Compile Include="THELOAI.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="TheLoaiDAO.cs" />
     <Compile Include="TONKHO.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="TonKhoDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="BookStore.edmx">
