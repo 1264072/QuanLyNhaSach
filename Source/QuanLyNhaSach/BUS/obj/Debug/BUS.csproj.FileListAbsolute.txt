@@ -1,0 +1,11 @@
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\BUS.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\BUS.pdb
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\DAO.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\DTO.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\EntityFramework.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\DAO.pdb
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\DTO.pdb
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\bin\Debug\EntityFramework.xml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\obj\Debug\BUS.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\BUS\obj\Debug\BUS.pdb

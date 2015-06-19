@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="ChiTietPhieuNhapBUS.cs" />
+    <Compile Include="CongNoBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
   </ItemGroup>

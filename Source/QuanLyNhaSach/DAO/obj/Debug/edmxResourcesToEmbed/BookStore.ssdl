@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHITIETHOADON">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAHD" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MADS" Type="int" Nullable="false" />
+    <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SOLUONG" Type="int" Nullable="false" />
+    <Property Name="DONGIA" Type="money" Nullable="false" />
+    <Property Name="THANHTIEN" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHITIETPHIEUNHAP">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MADS" Type="int" Nullable="false" />
+    <Property Name="SOLUONG" Type="int" Nullable="false" />
+    <Property Name="DONGIA" Type="money" Nullable="false" />
+    <Property Name="THANHTIEN" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHUCVU">
+    <Key>
+      <PropertyRef Name="MACV" />
+    </Key>
+    <Property Name="MACV" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENCV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONGNO">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYPHATSINH" Type="date" Nullable="false" />
+    <Property Name="NODAU" Type="money" Nullable="false" />
+    <Property Name="PHATSINH" Type="money" Nullable="false" />
+    <Property Name="NOCUOI" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DAUSACH">
+    <Key>
+      <PropertyRef Name="MADS" />
+    </Key>
+    <Property Name="MADS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENSACH" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TACGIA" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SOLUONG" Type="int" Nullable="false" />
+    <Property Name="DONGIA" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYLAP" Type="date" Nullable="false" />
+    <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TONGTIEN" Type="money" Nullable="false" />
+    <Property Name="TIENTRA" Type="money" Nullable="false" />
+    <Property Name="TIENNO" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MACV" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHOMATKHAU">
+    <Key>
+      <PropertyRef Name="MA" />
+    </Key>
+    <Property Name="MA" Type="int" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHIEUCHI">
+    <Key>
+      <PropertyRef Name="MAPC" />
+    </Key>
+    <Property Name="MAPC" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYLAP" Type="date" Nullable="false" />
+    <Property Name="TIENCHI" Type="money" Nullable="false" />
+    <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MAPN" />
+    </Key>
+    <Property Name="MAPN" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYLAP" Type="date" Nullable="false" />
+    <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MANCC" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TONGTIEN" Type="money" Nullable="false" />
+    <Property Name="CONNO" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHIEUTHUNO">
+    <Key>
+      <PropertyRef Name="MAPT" />
+    </Key>
+    <Property Name="MAPT" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MAKH" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYLAP" Type="date" Nullable="false" />
+    <Property Name="TIENNO" Type="money" Nullable="false" />
+    <Property Name="TIENTHU" Type="money" Nullable="false" />
+    <Property Name="CONNO" Type="money" Nullable="false" />
+    <Property Name="MANV" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QUYDINH">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="NHAPTOITHIEU" Type="int" Nullable="false" />
+    <Property Name="TONTRUOCNHAP" Type="int" Nullable="false" />
+    <Property Name="TONSAUBAN" Type="int" Nullable="false" />
+    <Property Name="NOTOIDA" Type="money" Nullable="false" />
+    <Property Name="THUQUANO" Type="bit" Nullable="false" />
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MANV" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THELOAI">
+    <Key>
+      <PropertyRef Name="MATL" />
+    </Key>
+    <Property Name="MATL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENTL" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TONKHO">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MADS" Type="int" Nullable="false" />
+    <Property Name="NGAYPHATSINH" Type="date" Nullable="false" />
+    <Property Name="TONDAU" Type="int" Nullable="false" />
+    <Property Name="PHATSINH" Type="int" Nullable="false" />
+    <Property Name="TONCUOI" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BookStoreModelStoreContainer">
+    <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETPHIEUNHAP" EntityType="Self.CHITIETPHIEUNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONGNO" EntityType="Self.CONGNO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DAUSACH" EntityType="Self.DAUSACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHOMATKHAU" EntityType="Self.NHOMATKHAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUCHI" EntityType="Self.PHIEUCHI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIEUTHUNO" EntityType="Self.PHIEUTHUNO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUYDINH" EntityType="Self.QUYDINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TONKHO" EntityType="Self.TONKHO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
