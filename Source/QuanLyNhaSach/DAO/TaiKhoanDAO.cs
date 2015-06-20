@@ -64,5 +64,37 @@ namespace DAO
             }
         }
 
+
+        public static int DoiMatKhau(string username, string newpass)
+        {
+            using (BookStoreEntities bs = new BookStoreEntities())
+            {
+                TAIKHOAN tk = bs.TAIKHOANs.Where(t => t.USERNAME == username).FirstOrDefault();
+                if (tk != null)
+                {
+                    tk.PASSWORD = newpass;
+                    bs.NHOMATKHAUs.Where(m => m.USERNAME == tk.USERNAME).FirstOrDefault().TRANGTHAI = false;
+                }                
+                int i = bs.SaveChanges();
+
+                return i;
+            }
+        }
+
+        public static bool KiemTraMatKhau(string username, string oldpass)
+        {
+            using (BookStoreEntities bs = new BookStoreEntities())
+            {
+                TAIKHOAN tk = bs.TAIKHOANs.Where(t => t.USERNAME == username).FirstOrDefault();
+                if (tk.PASSWORD == oldpass)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

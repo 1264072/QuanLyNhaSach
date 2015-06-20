@@ -21,17 +21,19 @@ namespace GUI
     public partial class NhanVienQuanLy : Window
     {
         private NhanVienDTO nhanVienDTO;
+        private NhoMatKhauDTO nhoMatKhauDTO;
 
         public NhanVienQuanLy()
         {
             InitializeComponent();
         }
 
-        public NhanVienQuanLy(NhanVienDTO nhanVienDTO)
+        public NhanVienQuanLy(NhanVienDTO nhanVienDTO, NhoMatKhauDTO nhoMatKhauDTO)
         {
             // TODO: Complete member initialization
             InitializeComponent();
             this.nhanVienDTO = nhanVienDTO;
+            this.nhoMatKhauDTO = nhoMatKhauDTO;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -72,7 +74,7 @@ namespace GUI
 
         private void btnDoiMatKhau_Click(object sender, RoutedEventArgs e)
         {
-            DoiMatKhau obj = new DoiMatKhau();
+            DoiMatKhau obj = new DoiMatKhau(nhoMatKhauDTO);
             TabItem tabMatKhau = new TabItem();
             tabMatKhau.Header = "Đổi mật khẩu";
             tabMatKhau.Name = "DoiMatKhau";
@@ -85,6 +87,24 @@ namespace GUI
             else
             {
                 ContentControl.Items.Add(tabMatKhau);
+            }
+        }
+
+        private void btnKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            KhachHang obj = new KhachHang();
+            TabItem tabKhachHang = new TabItem();
+            tabKhachHang.Content = obj;
+            tabKhachHang.Header = "Quản lý khách hàng";
+            tabKhachHang.Name = "KhachHang";
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabKhachHang.Name)).SingleOrDefault() != null)
+            {
+                tabKhachHang.IsSelected = true;
+                tabKhachHang.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabKhachHang);
             }
         }
     }

@@ -86,6 +86,12 @@
     <Compile Include="DoiMatKhau.xaml.cs">
       <DependentUpon>DoiMatKhau.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang.xaml.cs">
+      <DependentUpon>KhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Them_ChinhSuaKhachHang.xaml.cs">
+      <DependentUpon>Them_ChinhSuaKhachHang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinNhanVien.xaml.cs">
       <DependentUpon>ThongTinNhanVien.xaml</DependentUpon>
     </Compile>
@@ -133,7 +139,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="KhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NhanVienQuanLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Them_ChinhSuaKhachHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

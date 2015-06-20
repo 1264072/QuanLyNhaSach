@@ -24,5 +24,15 @@ namespace BUS
         {
             return TaiKhoanDAO.LayTaiKhoan();
         }
+
+        public static int DoiMatKhau(string username, string newpass)
+        {
+            return TaiKhoanDAO.DoiMatKhau(username, newpass);
+        }
+
+        public static bool KiemTraMatKhau(string username, string oldpass)
+        {
+            return TaiKhoanDAO.KiemTraMatKhau(username, oldpass);
+        }
     }
 }

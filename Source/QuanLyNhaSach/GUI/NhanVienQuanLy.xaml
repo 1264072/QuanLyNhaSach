@@ -36,7 +36,7 @@
             <TabItem Header="Quản lý">
                 <TabItem.Content>
                     <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnKhachHang" Click="btnKhachHang_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\users.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Khách hàng</TextBlock>

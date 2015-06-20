@@ -61,7 +61,7 @@ namespace GUI
                 }
                 if (chucVu == "NVQL")
                 {
-                    NhanVienQuanLy obj = new NhanVienQuanLy(NhanVienBUS.LayNhanVienTheoTaiKhoan(username));
+                    NhanVienQuanLy obj = new NhanVienQuanLy(NhanVienBUS.LayNhanVienTheoTaiKhoan(username), TaiKhoanBUS.LayTaiKhoan());
                     obj.Show();
                     this.Close();
                 }
