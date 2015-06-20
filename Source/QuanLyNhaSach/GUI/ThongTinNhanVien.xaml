@@ -34,7 +34,7 @@
                         <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding DIACHI}"></TextBlock>
                         <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding SDT}"></TextBlock>
                         <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding EMAIL}"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding MACV}"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding TENCV}"></TextBlock>
                     </Grid>
                 </GroupBox.Content>
             </GroupBox>

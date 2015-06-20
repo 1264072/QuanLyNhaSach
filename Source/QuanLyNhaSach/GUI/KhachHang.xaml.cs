@@ -30,9 +30,10 @@ namespace GUI
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             List<KhachHangDTO> lst = KhachHangBUS.LayDanhSach();
-            dgvKhachKhang.DataContext = lst;
-            dgvKhachKhang.SelectionMode = DataGridSelectionMode.Single;
-            dgvKhachKhang.SelectionUnit = DataGridSelectionUnit.FullRow;
+            dgvKhachHang.DataContext = lst;
+            dgvKhachHang.IsReadOnly = true;
+            dgvKhachHang.SelectionMode = DataGridSelectionMode.Single;
+            dgvKhachHang.SelectionUnit = DataGridSelectionUnit.FullRow;
         }
 
         private void btnThem_Click(object sender, RoutedEventArgs e)
@@ -47,9 +48,9 @@ namespace GUI
 
         private void btnChinhSua_Click(object sender, RoutedEventArgs e)
         {
-            if (dgvKhachKhang.SelectedItem != null)
+            if (dgvKhachHang.SelectedItem != null)
             {
-                KhachHangDTO khDTO = (KhachHangDTO)dgvKhachKhang.SelectedItem;
+                KhachHangDTO khDTO = (KhachHangDTO)dgvKhachHang.SelectedItem;
                 Them_ChinhSuaKhachHang window = new Them_ChinhSuaKhachHang();
                 window.Option = 1;
                 window.khDTO = khDTO;
@@ -61,18 +62,18 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Chưa chọn khách hàng cần chỉnh sửa thông tin", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Chưa chọn khách hàng cần chỉnh sửa thông tin !", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         private void btnXoa_Click(object sender, RoutedEventArgs e)
         {
-            if (dgvKhachKhang.SelectedItem != null)
+            if (dgvKhachHang.SelectedItem != null)
             {
                 MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa dữ liệu khách hàng này ?", "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    KhachHangDTO khDTO = (KhachHangDTO)dgvKhachKhang.SelectedItem;
+                    KhachHangDTO khDTO = (KhachHangDTO)dgvKhachHang.SelectedItem;
                     int i = KhachHangBUS.XoaKhachHang(khDTO);
                     if (i > 0)
                     {

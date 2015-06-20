@@ -14,6 +14,13 @@ namespace DTO
         string dIACHI;
         string eMAIL;
         string mACV;
+        string tENCV;
+
+        public string TENCV
+        {
+            get { return tENCV; }
+            set { tENCV = value; }
+        }
 
         public string MACV
         {

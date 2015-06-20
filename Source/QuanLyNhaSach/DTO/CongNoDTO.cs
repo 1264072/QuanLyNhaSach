@@ -38,6 +38,11 @@ namespace DTO
             get { return nODAU; }
             set { nODAU = value; }
         }
+        public DateTime NGAYPHATSINH
+        {
+            get { return nGAYPHATSINH; }
+            set { nGAYPHATSINH = value; }
+        }
 
         public string MAKH
         {

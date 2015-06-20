@@ -42,18 +42,37 @@
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Khách hàng</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="90" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="90" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnNhaCungCap" Click="btnNhaCungCap_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\truck.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Nhà cung cấp</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnNhanVien" Click="btnNhanVien_Click">
                             <StackPanel>
-                                <Image Height="64" Width="64" Source=".\Icons\Magnifying-glass.png"/>
-                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Tra cứu sách</TextBlock>
+                                <Image Height="64" Width="64" Source=".\Icons\male.png"/>
+                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Nhân viên</TextBlock>
                             </StackPanel>
                         </Button>
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnDauSach" Click="btnDauSach_Click">
+                            <StackPanel>
+                                <Image Height="64" Width="64" Source=".\Icons\addressbook.png"/>
+                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Đầu sách</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                            <StackPanel>
+                                <Image Height="64" Width="64" Source=".\Icons\checklist.png"/>
+                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Đơn hàng</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+
+            <TabItem Header="Chức năng">
+                <TabItem.Content>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                         <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\shop.png"/>
@@ -62,15 +81,21 @@
                         </Button>
                         <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
                             <StackPanel>
-                                <Image Height="64" Width="64" Source=".\Icons\cash.png"/>
+                                <Image Height="64" Width="64" Source=".\Icons\piggy-bank.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Thu tiền</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                            <StackPanel>
+                                <Image Height="64" Width="64" Source=".\Icons\cash.png"/>
+                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Chi tiền</TextBlock>
                             </StackPanel>
                         </Button>
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
 
-            <TabItem Header="Báo cáo">
+            <TabItem Header="Thống kê">
                 <TabItem.Content>
                     <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                         <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">

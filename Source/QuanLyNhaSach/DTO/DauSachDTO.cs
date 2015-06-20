@@ -8,14 +8,15 @@ namespace DTO
 {
     public class DauSachDTO
     {
+        int mADS;
         string tENSACH;
         string mATL;
         string tENTL;
         string tACGIA;
         int sOLUONG;
-        double dONGIA;
+        decimal dONGIA;
 
-        public double DONGIA
+        public decimal DONGIA
         {
             get { return dONGIA; }
             set { dONGIA = value; }
@@ -49,6 +50,12 @@ namespace DTO
         {
             get { return tENSACH; }
             set { tENSACH = value; }
+        }
+
+        public int MADS
+        {
+            get { return mADS; }
+            set { mADS = value; }
         }
 
         public DauSachDTO() { }

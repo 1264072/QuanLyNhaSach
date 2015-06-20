@@ -47,7 +47,7 @@ namespace DAO
                     DIACHI = khDTO.DIACHI,
                     SDT = khDTO.SDT,
                     EMAIL = khDTO.EMAIL,
-                    NO = khDTO.NO
+                    NO = false
                 };
                 bs.KHACHHANGs.Add(kh);
                 return bs.SaveChanges();

@@ -74,6 +74,7 @@
     <Compile Include="CHUCVU.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChucVuDAO.cs" />
     <Compile Include="CONGNO.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>

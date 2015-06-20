@@ -107,5 +107,59 @@ namespace GUI
                 ContentControl.Items.Add(tabKhachHang);
             }
         }
+
+        private void btnNhaCungCap_Click(object sender, RoutedEventArgs e)
+        {
+            NhaCungCap obj = new NhaCungCap();
+            TabItem tabNhaCungCap = new TabItem();
+            tabNhaCungCap.Name = "NhaCungCap";
+            tabNhaCungCap.Header = "Quản lý nhà cung cấp";
+            tabNhaCungCap.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhaCungCap.Name)).SingleOrDefault() != null)
+            {
+                tabNhaCungCap.IsSelected = true;
+                tabNhaCungCap.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabNhaCungCap);
+            }
+        }
+
+        private void btnNhanVien_Click(object sender, RoutedEventArgs e)
+        {
+            NhanVien obj = new NhanVien();
+            TabItem tabNhanVien = new TabItem();
+            tabNhanVien.Name = "NhanVien";
+            tabNhanVien.Header = "Quản lý nhân viên";
+            tabNhanVien.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhanVien.Name)).SingleOrDefault() != null)
+            {
+                tabNhanVien.IsSelected = true;
+                tabNhanVien.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabNhanVien);
+            }
+        }
+
+        private void btnDauSach_Click(object sender, RoutedEventArgs e)
+        {
+            DauSach obj = new DauSach();
+            TabItem tabDauSach = new TabItem();
+            tabDauSach.Name = "DauSach";
+            tabDauSach.Header = "Quản lý đầu sách";
+            tabDauSach.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabDauSach.Name)).SingleOrDefault() != null)
+            {
+                tabDauSach.IsSelected = true;
+                tabDauSach.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabDauSach);
+            }
+        }
     }
 }

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ChiTietHoaDonBUS.cs" />
     <Compile Include="ChiTietPhieuNhapBUS.cs" />
+    <Compile Include="ChucVuBUS.cs" />
     <Compile Include="CongNoBUS.cs" />
     <Compile Include="DauSachBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />

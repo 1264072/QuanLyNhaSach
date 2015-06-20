@@ -16,7 +16,7 @@
             <Button Margin="5" Name="btnChinhSua" Click="btnChinhSua_Click">Chỉnh sửa thông tin</Button>
             <Button Margin="5" Name="btnXoa" Click="btnXoa_Click">Xóa khách hàng</Button>
         </StackPanel>
-        <DataGrid Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Name="dgvKhachKhang" ItemsSource="{Binding}">
+        <DataGrid Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Name="dgvKhachHang" ItemsSource="{Binding}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã khách hàng" Binding="{Binding MAKH}" Width="*"/>
                 <DataGridTextColumn Header="Họ tên" Binding="{Binding HOTEN}" Width="*"/>

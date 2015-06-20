@@ -33,17 +33,16 @@ namespace GUI
         {
             if (KiemTraDauVao())
             {
+                khDTO = new KhachHangDTO()
+                {
+                    MAKH = MaKH.Text,
+                    HOTEN = HoTen.Text,
+                    DIACHI = DiaChi.Text,
+                    SDT = SDT.Text,
+                    EMAIL = Email.Text
+                };
                 if (Option == 0)
                 {
-                    khDTO = new KhachHangDTO()
-                    {
-                        MAKH = MaKH.Text,
-                        HOTEN = HoTen.Text,
-                        DIACHI = DiaChi.Text,
-                        SDT = SDT.Text,
-                        EMAIL = Email.Text,
-                        NO = false
-                    };
                     int i = KhachHangBUS.ThemKhachHang(khDTO);
                     if (i > 0)
                     {
@@ -52,19 +51,11 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show("Xảy ra lỗi ! Mã khách hàng đã tồn tại.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);                        
+                        MessageBox.Show("Xảy ra lỗi ! Mã khách hàng đã tồn tại.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 else
                 {
-                    khDTO = new KhachHangDTO()
-                    {
-                        MAKH = MaKH.Text,
-                        HOTEN = HoTen.Text,
-                        DIACHI = DiaChi.Text,
-                        SDT = SDT.Text,
-                        EMAIL = Email.Text
-                    };
                     int i = KhachHangBUS.CapNhatKhachHang(khDTO);
                     if (i > 0)
                     {
@@ -73,7 +64,7 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show("Xảy ra lỗi !", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Xảy ra lỗi ! Cập nhật thông tin thất bại", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
