@@ -15,6 +15,20 @@ namespace DTO
         double tIENTHU;
         double cONNO;
         string mANV;
+        string tENKH;
+        string tENNV;
+
+        public string TENNV
+        {
+            get { return tENNV; }
+            set { tENNV = value; }
+        }
+
+        public string TENKH
+        {
+            get { return tENKH; }
+            set { tENKH = value; }
+        }
 
         public string MANV
         {

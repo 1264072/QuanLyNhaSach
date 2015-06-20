@@ -13,6 +13,13 @@ namespace DTO
         int sOLUONG;
         double dONGIA;
         double tHANHTIEN;
+        string tENDAUSACH;
+
+        public string TENDAUSACH
+        {
+            get { return tENDAUSACH; }
+            set { tENDAUSACH = value; }
+        }
 
         public double THANHTIEN
         {

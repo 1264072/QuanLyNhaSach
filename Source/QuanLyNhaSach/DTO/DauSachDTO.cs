@@ -10,6 +10,7 @@ namespace DTO
     {
         string tENSACH;
         string mATL;
+        string tENTL;
         string tACGIA;
         int sOLUONG;
         double dONGIA;
@@ -30,6 +31,12 @@ namespace DTO
         {
             get { return tACGIA; }
             set { tACGIA = value; }
+        }
+
+        public string TENTL
+        {
+            get { return tENTL; }
+            set { tENTL = value; }
         }
 
         public string MATL

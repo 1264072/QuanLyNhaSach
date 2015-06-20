@@ -13,6 +13,13 @@ namespace DTO
         int tONDAU;
         int pHATSINH;
         int tONCUOI;
+        string tENDAUSACH;
+
+        public string TENDAUSACH
+        {
+            get { return tENDAUSACH; }
+            set { tENDAUSACH = value; }
+        }
 
         public int TONCUOI
         {

@@ -14,6 +14,20 @@ namespace DTO
         int sOLUONG;
         double dONGIA;
         double tHANHTIEN;
+        string tENDAUSACH;
+        string tENTL;
+
+        public string TENTL
+        {
+            get { return tENTL; }
+            set { tENTL = value; }
+        }
+
+        public string TENDAUSACH
+        {
+            get { return tENDAUSACH; }
+            set { tENDAUSACH = value; }
+        }
 
         public double THANHTIEN
         {

@@ -13,6 +13,13 @@ namespace DTO
         double nODAU;
         double pHATSINH;
         double nOCUOI;
+        string tENKH;
+
+        public string TENKH
+        {
+            get { return tENKH; }
+            set { tENKH = value; }
+        }
 
         public double NOCUOI
         {

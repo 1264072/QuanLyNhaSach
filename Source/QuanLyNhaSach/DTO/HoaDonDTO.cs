@@ -15,6 +15,20 @@ namespace DTO
         double tONGTIEN;
         double tIENTRA;
         double tIENNO;
+        string tENKH;
+        string tENNV;
+
+        public string TENNV
+        {
+            get { return tENNV; }
+            set { tENNV = value; }
+        }
+
+        public string TENKH
+        {
+            get { return tENKH; }
+            set { tENKH = value; }
+        }
 
         public double TIENNO
         {

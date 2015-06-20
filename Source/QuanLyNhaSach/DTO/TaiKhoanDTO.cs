@@ -6,6 +6,13 @@ namespace DTO
         string uSERNAME;
         string pASSWORD;
         string mANV;
+        string tENNV;
+
+        public string TENNV
+        {
+            get { return tENNV; }
+            set { tENNV = value; }
+        }
 
         public string USERNAME
         {

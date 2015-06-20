@@ -48,15 +48,24 @@ namespace GUI
             if (TaiKhoanBUS.DangNhap(username, password))
             {
                 if (chkGhiNho.IsChecked == true)
-                {
                     TaiKhoanBUS.GhiNhoTaiKhoan(username, password, true);
-                    lbWarning.Text = "";
-                }
                 else
-                {
                     TaiKhoanBUS.GhiNhoTaiKhoan(username, password, false);
-                    lbWarning.Text = "";
+
+                lbWarning.Text = "";
+
+                string chucVu = NhanVienBUS.LayNhanVienTheoTaiKhoan(username).MACV;
+                if (chucVu == "NVBH")
+                {
+                    MessageBox.Show("Đây là nhân viên bán hàng");                    
                 }
+                if (chucVu == "NVQL")
+                {
+                    NhanVienQuanLy obj = new NhanVienQuanLy(NhanVienBUS.LayNhanVienTheoTaiKhoan(username));
+                    obj.Show();
+                    this.Close();
+                }
+
             }
             else
             {

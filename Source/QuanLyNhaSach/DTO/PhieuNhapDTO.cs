@@ -14,6 +14,20 @@ namespace DTO
         string mANCC;
         double tONGTIEN;
         double cONNO;
+        string tENNV;
+        string tENNCC;
+
+        public string TENNCC
+        {
+            get { return tENNCC; }
+            set { tENNCC = value; }
+        }
+
+        public string TENNV
+        {
+            get { return tENNV; }
+            set { tENNV = value; }
+        }
 
         public double CONNO
         {

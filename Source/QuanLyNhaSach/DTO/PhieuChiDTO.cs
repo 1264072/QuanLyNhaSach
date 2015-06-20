@@ -13,6 +13,13 @@ namespace DTO
         DateTime nGAYLAP;
         double tIENCHI;
         string mAPN;
+        string tENNV;
+
+        public string TENNV
+        {
+            get { return tENNV; }
+            set { tENNV = value; }
+        }
 
         public string MAPN
         {
