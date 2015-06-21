@@ -38,7 +38,8 @@ namespace GUI
         {
             Them_ChinhSuaNhaCungCap window = new Them_ChinhSuaNhaCungCap();
             window.Option = 0;
-            if (window.ShowDialog().Value)
+            Nullable<bool> result = window.ShowDialog();
+            if (result == true)
             {
                 UserControl_Loaded(null, null);
             }
@@ -52,7 +53,8 @@ namespace GUI
                 Them_ChinhSuaNhaCungCap window = new Them_ChinhSuaNhaCungCap();
                 window.Option = 1;
                 window.NccDTO = NCC;
-                if (window.ShowDialog().Value)
+                Nullable<bool> result = window.ShowDialog();
+                if (result == true)
                 {
                     UserControl_Loaded(null, null);
                 }

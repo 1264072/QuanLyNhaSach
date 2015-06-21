@@ -40,7 +40,8 @@ namespace GUI
         {
             Them_ChinhSuaKhachHang window = new Them_ChinhSuaKhachHang();
             window.Option = 0;
-            if (window.ShowDialog().Value)
+            Nullable<bool> result = window.ShowDialog();
+            if (result == true)
             {
                 UserControl_Loaded(null, null);
             }
@@ -54,8 +55,8 @@ namespace GUI
                 Them_ChinhSuaKhachHang window = new Them_ChinhSuaKhachHang();
                 window.Option = 1;
                 window.khDTO = khDTO;
-                window.ShowDialog();
-                if (window.ShowDialog().Value)
+                Nullable<bool> result = window.ShowDialog();
+                if (result == true)
                 {
                     UserControl_Loaded(null, null);
                 }

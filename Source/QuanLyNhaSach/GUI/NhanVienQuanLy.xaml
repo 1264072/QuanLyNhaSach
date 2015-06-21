@@ -60,7 +60,7 @@
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Đầu sách</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnDonHang" Click="btnDonHang_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\checklist.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Đơn hàng</TextBlock>

@@ -32,7 +32,7 @@
                     <TextBox Name="DiaChi" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="18" Margin="0,5"></TextBox>
                     <TextBox Name="SDT" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Height="18" Margin="0,5"></TextBox>
                     <TextBox Name="Email" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="18" Margin="0,5"></TextBox>
-                    <ComboBox Name="cbChucVu" ItemsSource="{Binding}" DisplayMemberPath="TENCV" SelectedValuePath="MACV" SelectedValue="{Binding MACV}"
+                    <ComboBox Name="cbChucVu" ItemsSource="{Binding}" DisplayMemberPath="TENCV" SelectedValuePath="MACV" SelectedValue="MACV"
                               Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"/>
 
                     <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">

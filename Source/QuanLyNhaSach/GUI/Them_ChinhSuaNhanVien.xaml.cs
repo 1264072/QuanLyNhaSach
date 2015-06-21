@@ -36,6 +36,7 @@ namespace GUI
             if (Option == 0)
             {
                 Title = "Thêm nhân viên";
+                cbChucVu.SelectedIndex = 0;
             }
             else
             {

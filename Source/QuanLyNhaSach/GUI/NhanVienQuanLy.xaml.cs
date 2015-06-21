@@ -161,5 +161,23 @@ namespace GUI
                 ContentControl.Items.Add(tabDauSach);
             }
         }
+
+        private void btnDonHang_Click(object sender, RoutedEventArgs e)
+        {
+            DonHang obj = new DonHang();
+            TabItem tabDonHang = new TabItem();
+            tabDonHang.Header = "Quản lý đơn hàng";
+            tabDonHang.Name = "DonHang";
+            tabDonHang.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabDonHang.Name)).SingleOrDefault() != null)
+            {
+                tabDonHang.IsSelected = true;
+                tabDonHang.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabDonHang);
+            }
+        }
     }
 }

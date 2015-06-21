@@ -23,7 +23,6 @@
                 <DataGridTextColumn Header="Địa chỉ" Binding="{Binding DIACHI}" Width="*"/>
                 <DataGridTextColumn Header="Số điện thoại" Binding="{Binding SDT}" Width="*"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding EMAIL}" Width="*"/>
-                <DataGridTextColumn Header="Còn nợ" Binding="{Binding NO}" Width="*"/>
             </DataGrid.Columns>            
         </DataGrid>
     </Grid>

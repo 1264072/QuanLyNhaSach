@@ -19,6 +19,7 @@ namespace DAO
                 {
                     DauSachDTO dsDTO = new DauSachDTO()
                     {
+                        MADS = ds.MADS,
                         TENSACH = ds.TENSACH,
                         MATL = ds.MATL,
                         TENTL = ds.THELOAI.TENTL,

@@ -31,7 +31,8 @@ namespace GUI
         {
             Them_ChinhSuaNhanVien window = new Them_ChinhSuaNhanVien();
             window.Option = 0;
-            if (window.ShowDialog().Value)
+            Nullable<bool> result = window.ShowDialog();
+            if (result == true)
             {
                 UserControl_Loaded(null, null);
             }
@@ -45,8 +46,8 @@ namespace GUI
                 Them_ChinhSuaNhanVien window = new Them_ChinhSuaNhanVien();
                 window.Option = 1;
                 window.NvDTO = nvDTO;
-                window.ShowDialog();
-                if (window.ShowDialog().Value)
+                Nullable<bool> result = window.ShowDialog();
+                if (result == true)
                 {
                     UserControl_Loaded(null, null);
                 }

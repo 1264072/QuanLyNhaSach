@@ -30,9 +30,12 @@ namespace GUI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            List<TheLoaiDTO> lst = TheLoaiBUS.LayDanhSach();
+            TheLoai.DataContext = lst;
             if (Option == 0)
             {
                 Title = "Thêm đầu sách";
+                TheLoai.SelectedIndex = 0;
             }
             else
             {
@@ -47,15 +50,17 @@ namespace GUI
 
         private void btnXacNhan_Click(object sender, RoutedEventArgs e)
         {
+            
             if (KiemTraDauVao())
             {
-                DsDTO.TENSACH = TenSach.Text;
-                DsDTO.MATL = TheLoai.SelectedValue.ToString();
-                DsDTO.TACGIA = TacGia.Text;
-                DsDTO.SOLUONG = SoLuong.Value.Value;
-                DsDTO.DONGIA = DonGia.Value.Value;
                 if (Option == 0)
                 {
+                    DsDTO = new DauSachDTO();
+                    DsDTO.TENSACH = TenSach.Text;
+                    DsDTO.MATL = TheLoai.SelectedValue.ToString();
+                    DsDTO.TACGIA = TacGia.Text;
+                    DsDTO.SOLUONG = SoLuong.Value.Value;
+                    DsDTO.DONGIA = DonGia.Value.Value;
                     int i = DauSachBUS.ThemDauSach(DsDTO);
                     if (i > 0)
                     {
@@ -69,6 +74,11 @@ namespace GUI
                 }
                 else
                 {
+                    DsDTO.TENSACH = TenSach.Text;
+                    DsDTO.MATL = TheLoai.SelectedValue.ToString();
+                    DsDTO.TACGIA = TacGia.Text;
+                    DsDTO.SOLUONG = SoLuong.Value.Value;
+                    DsDTO.DONGIA = DonGia.Value.Value;
                     int i = DauSachBUS.CapNhatDauSach(DsDTO);
                     if (i > 0)
                     {

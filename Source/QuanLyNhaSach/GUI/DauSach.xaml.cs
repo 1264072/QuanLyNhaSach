@@ -31,7 +31,8 @@ namespace GUI
         {
             Them_ChinhSuaDauSach window = new Them_ChinhSuaDauSach();
             window.Option = 0;
-            if (window.ShowDialog().Value)
+            Nullable<bool> result = window.ShowDialog();
+            if (result == true)
             {
                 UserControl_Loaded(null, null);
             }
@@ -46,8 +47,8 @@ namespace GUI
                 Them_ChinhSuaDauSach window = new Them_ChinhSuaDauSach();
                 window.Option = 1;
                 window.DsDTO = dsDTO;
-                window.ShowDialog();
-                if (window.ShowDialog().Value)
+                Nullable<bool> result = window.ShowDialog();
+                if (result == true)
                 {
                     UserControl_Loaded(null, null);
                 }
@@ -62,7 +63,7 @@ namespace GUI
         {
             if (dgvDauSach.SelectedItem != null)
             {
-                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa dữ liệu khách hàng này ?", "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa dữ liệu đầu sách này ?", "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     DauSachDTO dsDTO = (DauSachDTO)dgvDauSach.SelectedItem;

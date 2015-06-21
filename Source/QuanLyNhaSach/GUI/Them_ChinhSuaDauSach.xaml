@@ -13,7 +13,7 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"></ColumnDefinition>
@@ -25,12 +25,12 @@
                     <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" Grid.Column="0" Grid.Row="2" Height="16" Margin="0,6">Tác giả</TextBlock>
                     <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" Grid.Column="0" Grid.Row="3" Height="16" Margin="0,6">Số lượng</TextBlock>
                     <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" Grid.Column="0" Grid.Row="4" Height="16" Margin="0,6">Đơn giá</TextBlock>
-                    
+
                     <TextBox Name="TenSach" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Height="18" Margin="0,5"></TextBox>
-                    <ComboBox Name="TheLoai" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Height="18" Margin="0,5"></ComboBox>
+                    <ComboBox Name="TheLoai" ItemsSource="{Binding}" DisplayMemberPath="TENTL" SelectedValuePath="MATL" SelectedValue="MATL" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Height="23"></ComboBox>
                     <TextBox Name="TacGia" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="18" Margin="0,5"></TextBox>
-                    <wpfTool:IntegerUpDown Name="SoLuong" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Height="18" Margin="0,5" DefaultValue="0" Increment="1"></wpfTool:IntegerUpDown>
-                    <wpfTool:DecimalUpDown Name="DonGia" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="18" Margin="0,5" DefaultValue="1000" Increment="1000"></wpfTool:DecimalUpDown>                              
+                    <wpfTool:IntegerUpDown Name="SoLuong" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Height="18" Margin="0,5" Text="0" Minimum="0" Increment="1"></wpfTool:IntegerUpDown>
+                    <wpfTool:DecimalUpDown Name="DonGia" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="18" Margin="0,5" FormatString="0" Text="1000" Minimum="0" Increment="1000"></wpfTool:DecimalUpDown>
 
                     <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Name="btnXacNhan" Margin="5" Width="100" Click="btnXacNhan_Click">Xác nhận</Button>

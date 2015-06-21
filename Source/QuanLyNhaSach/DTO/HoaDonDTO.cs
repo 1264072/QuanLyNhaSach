@@ -12,9 +12,9 @@ namespace DTO
         string mAKH; 
         DateTime nGAYLAP;
         string mANV;
-        double tONGTIEN;
-        double tIENTRA;
-        double tIENNO;
+        decimal tONGTIEN;
+        decimal tIENTRA;
+        decimal tIENNO;
         string tENKH;
         string tENNV;
 
@@ -30,19 +30,19 @@ namespace DTO
             set { tENKH = value; }
         }
 
-        public double TIENNO
+        public decimal TIENNO
         {
             get { return tIENNO; }
             set { tIENNO = value; }
         }
 
-        public double TIENTRA
+        public decimal TIENTRA
         {
             get { return tIENTRA; }
             set { tIENTRA = value; }
         }
 
-        public double TONGTIEN
+        public decimal TONGTIEN
         {
             get { return tONGTIEN; }
             set { tONGTIEN = value; }
