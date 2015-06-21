@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="GUI.NhapSach"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Thông tin phiếu nhập" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Text="Mã phiếu nhập"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Name="MaPN"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Text="Ngày lập phiếu" />
+                <DatePicker Name="NgayLap" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10,0"></DatePicker>
+
+                <TextBlock Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Text="Nhà cung cấp" />
+                <ComboBox Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Name="cbNCC" ItemsSource="{Binding}" DisplayMemberPath="TENNCC" SelectedValuePath="MANCC"/>
+                <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Text="Tổng tiền" />
+                <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Foreground="Red" FontWeight="Bold" />
+            </Grid>
+        </GroupBox>
+
+        <Button Grid.Row="1" Name="btnThem" Click="btnThem_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2">Thêm sản phẩm</Button>
+
+        <GroupBox Grid.Row="2" Header="Chi tiết phiếu nhập" Margin="10">
+            <DataGrid Name="dgvChiTiet" CanUserAddRows="False" Loaded="dgvChiTiet_Loaded">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tên sách" Binding="{Binding TENSACH}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Thể loại" Binding="{Binding TENTL}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Tác giả" Binding="{Binding TACGIA}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Số lượng" Binding="{Binding SOLUONG}" Width="*"/>
+                    <DataGridTextColumn Header="Đơn giá" Binding="{Binding DONGIA, StringFormat=\{0:N0\}}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Thành tiền" Binding="{Binding THANHTIEN, StringFormat=\{0:N0\}}" Width="*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</UserControl>

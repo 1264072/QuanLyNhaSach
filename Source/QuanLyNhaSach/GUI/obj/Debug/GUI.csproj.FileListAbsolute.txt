@@ -86,3 +86,9 @@ E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\LapHoaDo
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienBanHang.g.cs
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThemChiTiet.g.cs
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\TraCuuDauSach.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\NhapSach.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\NhapSach.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThuTien.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThuTien.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTien.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTien.g.cs

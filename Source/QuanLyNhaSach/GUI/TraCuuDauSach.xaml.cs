@@ -21,6 +21,7 @@ namespace GUI
     /// </summary>
     public partial class TraCuuDauSach : UserControl
     {
+        public int Option { get; set; }
         public TraCuuDauSach()
         {
             InitializeComponent();
@@ -28,20 +29,43 @@ namespace GUI
 
         private void UserControl_Loaded_1(object sender, RoutedEventArgs e)
         {
-            cbTheLoai.DataContext = TheLoaiBUS.LayDanhSach();
+            List<TheLoaiDTO> lst = TheLoaiBUS.LayDanhSach();
+            TheLoaiDTO all = new TheLoaiDTO() { MATL = "ALL", TENTL = "Tất cả thể loại" };
+            cbTheLoai.Items.Add(all);
+            foreach (TheLoaiDTO tl in lst)
+            {
+                cbTheLoai.Items.Add(tl);
+            }
+            cbTheLoai.DisplayMemberPath = "TENTL";
+            cbTheLoai.SelectedValuePath = "MATL";
+            cbTheLoai.SelectedIndex = 0;
+
+            cbSoLuong.SelectedIndex = 0;
+            cbPrice.SelectedIndex = 0;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            TheLoaiDTO itemtl = (TheLoaiDTO)cbTheLoai.SelectedItem;
-            ComboBoxItem itemdg = (ComboBoxItem)cbPrice.SelectedItem;
-            DauSachDTO ds = new DauSachDTO
+            string matl = cbTheLoai.SelectedValue.ToString();
+            string soluong = ((ComboBoxItem)cbSoLuong.SelectedItem).Tag.ToString();
+            string dongia = ((ComboBoxItem)cbPrice.SelectedItem).Tag.ToString();
+
+            lstDS.DataContext = DauSachBUS.TimKiem(txtTenDauSach.Text, matl, soluong, dongia);
+        }
+
+        private void lstDS_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (Option == 1)
             {
-                TENSACH = txtTenDauSach.Text,
-                MATL = itemtl.MATL,
-                DONGIA = decimal.Parse(itemdg.Tag.ToString()),
-            };
-            lstDS.DataContext = DauSachBUS.SearchDauSach(ds);
+                if (sender != null)
+                {
+                    ListView lvw = sender as ListView;
+                    if (lvw != null && lvw.SelectedItem != null)
+                    {
+                        DauSachDTO ds = (DauSachDTO)lvw.SelectedItem;       
+                    }
+                }
+            }
         }
     }
 }

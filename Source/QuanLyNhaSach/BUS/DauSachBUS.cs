@@ -30,9 +30,9 @@ namespace BUS
             return DauSachDAO.XoaDauSach(DsDTO);
         }
 
-        public static List<DauSachDTO> SearchDauSach(DauSachDTO ds)
+        public static List<DauSachDTO> TimKiem(string ten, string matl, string soluong, string dongia)
         {
-            return DauSachDAO.SearchDauSach(ds);
+            return DauSachDAO.TimKiem(ten, matl, soluong, dongia);
         }
     }
 }

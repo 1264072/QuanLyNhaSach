@@ -14,6 +14,20 @@ namespace DTO
         double dONGIA;
         double tHANHTIEN;
         string tENDAUSACH;
+        string tENTL;
+        string tACGIA;
+
+        public string TACGIA
+        {
+            get { return tACGIA; }
+            set { tACGIA = value; }
+        }
+
+        public string TENTL
+        {
+            get { return tENTL; }
+            set { tENTL = value; }
+        }
 
         public string TENDAUSACH
         {

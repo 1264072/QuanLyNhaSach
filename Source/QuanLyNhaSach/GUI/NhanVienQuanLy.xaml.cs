@@ -179,5 +179,59 @@ namespace GUI
                 ContentControl.Items.Add(tabDonHang);
             }
         }
+
+        private void btnNhapSach_Click(object sender, RoutedEventArgs e)
+        {
+            NhapSach obj = new NhapSach();
+            TabItem tabNhapSach = new TabItem();
+            tabNhapSach.Header = "Lập phiếu nhập";
+            tabNhapSach.Name = "NhapSach";
+            tabNhapSach.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhapSach.Name)).SingleOrDefault() != null)
+            {
+                tabNhapSach.IsSelected = true;
+                tabNhapSach.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabNhapSach);
+            }
+        }
+
+        private void btnThuTien_Click(object sender, RoutedEventArgs e)
+        {
+            ThuTien obj = new ThuTien();
+            TabItem tabThuTien = new TabItem();
+            tabThuTien.Header = "Lập phiếu thu tiền";
+            tabThuTien.Name = "ThuTien";
+            tabThuTien.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabThuTien.Name)).SingleOrDefault() != null)
+            {
+                tabThuTien.IsSelected = true;
+                tabThuTien.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabThuTien);
+            }
+        }
+
+        private void btnChiTien_Click(object sender, RoutedEventArgs e)
+        {
+            ChiTien obj = new ChiTien();
+            TabItem tabChiTien = new TabItem();
+            tabChiTien.Header = "Lập phiếu chi tiền";
+            tabChiTien.Name = "ChiTien";
+            tabChiTien.Content = obj;
+            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabChiTien.Name)).SingleOrDefault() != null)
+            {
+                tabChiTien.IsSelected = true;
+                tabChiTien.Focus();
+            }
+            else
+            {
+                ContentControl.Items.Add(tabChiTien);
+            }
+        }
     }
 }

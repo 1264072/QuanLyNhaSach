@@ -80,33 +80,65 @@ namespace DAO
             }
         }
 
-        public static List<DauSachDTO> SearchDauSach(DauSachDTO ds)
+        public static List<DauSachDTO> TimKiem(string ten, string matl, string soluong, string dongia)
         {
+            List<DauSachDTO> lstDTO = new List<DauSachDTO>();
             using (BookStoreEntities bs = new BookStoreEntities())
             {
-                List<DauSachDTO> lst = new List<DauSachDTO>();
-                List<DAUSACH> linq = new List<DAUSACH>();
-                if (ds.DONGIA < 50000)
-                    linq = bs.DAUSACHes.Where(d => d.TENSACH.Contains(ds.TENSACH) || d.MATL.Contains(ds.MATL) || d.DONGIA <= ds.DONGIA).ToList();
-                else
-                    linq = bs.DAUSACHes.Where(d => d.TENSACH.Contains(ds.TENSACH) || d.MATL.Contains(ds.MATL) || d.DONGIA >= ds.DONGIA).ToList();
-                foreach (DAUSACH d in linq)
+                int slton = bs.QUYDINHs.ToList().Take(1).FirstOrDefault().TONTRUOCNHAP;
+                List<DAUSACH> lst = bs.DAUSACHes.ToList();
+                if (ten != "")
                 {
-
-                    ds = new DauSachDTO
+                    string[] arr = ten.Split(' ');
+                    for (int i = 0; i < arr.Length; i++)
                     {
-                        MADS = d.MADS,
-                        TENSACH = d.TENSACH,
-                        SOLUONG = d.SOLUONG,
-                        DONGIA = d.DONGIA,
-                        TACGIA = d.TACGIA,
-                        MATL = d.MATL,
-                        TENTL = d.THELOAI.TENTL
-                    };
-                    lst.Add(ds);
+                        lst = lst.Where(s => s.TENSACH.Contains(arr[i])).ToList();
+                    }
                 }
-                return lst;
+                if (matl != "ALL")
+                {
+                    lst = lst.Where(s => s.MATL == matl).ToList();
+                }
+                if (soluong == "0" && dongia == "0")
+                {
+                    lst = lst.OrderByDescending(s => s.SOLUONG).ThenByDescending(s => s.DONGIA).ToList();
+                }
+                else if (soluong == "0" && dongia == "1")
+                {
+                    lst = lst.OrderByDescending(s => s.SOLUONG).ThenBy(s => s.DONGIA).ToList();
+                }
+                else if (soluong == "1" && dongia == "0")
+                {
+                    lst = lst.OrderBy(s => s.SOLUONG).ThenByDescending(s => s.DONGIA).ToList();
+                }
+                else if (soluong == "2" && dongia == "0")
+                {
+                    lst = lst.Where(s => s.SOLUONG <= slton).OrderByDescending(s => s.SOLUONG).ToList();
+                }
+                else if (soluong == "2" && dongia == "1")
+                {
+                    lst = lst.Where(s => s.SOLUONG <= slton).OrderBy(s => s.SOLUONG).ToList();
+                }
+                else
+                {
+                    lst = lst.OrderBy(s => s.SOLUONG).ThenBy(s => s.DONGIA).ToList();
+                }
+                foreach (DAUSACH ds in lst)
+                {
+                    DauSachDTO dsDTO = new DauSachDTO()
+                    {
+                        MADS = ds.MADS,
+                        TENSACH = ds.TENSACH,
+                        MATL = ds.MATL,
+                        TENTL = ds.THELOAI.TENTL,
+                        TACGIA = ds.TACGIA,
+                        SOLUONG = ds.SOLUONG,
+                        DONGIA = ds.DONGIA
+                    };
+                    lstDTO.Add(dsDTO);
+                }
             }
+            return lstDTO;
         }
     }
 }

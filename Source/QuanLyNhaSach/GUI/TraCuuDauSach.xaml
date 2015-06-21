@@ -7,32 +7,49 @@
              d:DesignHeight="300" d:DesignWidth="600" Loaded="UserControl_Loaded_1">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         
         <GroupBox Grid.Row="0" Header="Thông tin cần tra cứu" >
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tên sách cần tìm"/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="1" Name="txtTenDauSach"/>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Thể loại" Grid.Column="2"/>
-                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="3" Name="cbTheLoai" ItemsSource="{Binding}" DisplayMemberPath="TENTL" SelectedValuePath="MATL"/>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Giá" Grid.Column="4"/>
-                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="5" Name="cbPrice" SelectedValue="Tag">
-                    <ComboBoxItem Tag="49999">
-                        <TextBlock Text="Dưới 50.000" />
+
+                <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Text="Tên đầu sách"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Name="txtTenDauSach"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Text="Số lượng tồn" />
+                <ComboBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Name="cbSoLuong" SelectedValue="Tag">
+                    <ComboBoxItem Tag="1">
+                        <TextBlock Text="Từ ít nhất đến nhiều nhất" />
                     </ComboBoxItem>
-                    <ComboBoxItem Tag="50001">
-                        <TextBlock Text="Trên 50.000" />
+                    <ComboBoxItem Tag="0">
+                        <TextBlock Text="Từ nhiều nhất đến ít nhất" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="2">
+                        <TextBlock Text="Dưới mức quy định" />
+                    </ComboBoxItem>
+                </ComboBox>
+                
+                <TextBlock Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Text="Thể loại" />
+                <ComboBox Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="10,0" Name="cbTheLoai" ItemsSource="{Binding}" DisplayMemberPath="TENTL" SelectedValuePath="MATL" SelectedValue="MATL"/>
+                <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Text="Lọc theo giá" />
+                <ComboBox Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" Margin="10,0" Name="cbPrice" SelectedValue="Tag">
+                    <ComboBoxItem Tag="1">
+                        <TextBlock Text="Từ thấp nhất đến cao nhất" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="0">
+                        <TextBlock Text="Từ cao nhất đến thấp nhất" />
                     </ComboBoxItem>
                 </ComboBox>
             </Grid>
@@ -44,12 +61,13 @@
             </DockPanel>
         </Button>
         <GroupBox Grid.Row="2" Header="Danh sách các đầu sách">
-            <ListView Name="lstDS" ItemsSource="{Binding}" Height="150">
+            <ListView Name="lstDS" ItemsSource="{Binding}" Height="150" MouseDoubleClick="lstDS_MouseDoubleClick">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Tên đầu sách" DisplayMemberBinding="{Binding  TENSACH}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
-                        <GridViewColumn Header="Tên thể loại" DisplayMemberBinding="{Binding TENTL}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
-                        <GridViewColumn Header="Giá đầu sách" DisplayMemberBinding="{Binding DONGIA}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Tên đầu sách" DisplayMemberBinding="{Binding TENSACH}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Thể loại" DisplayMemberBinding="{Binding TENTL}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Tác giả" DisplayMemberBinding="{Binding TACGIA}"  Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Đơn giá" DisplayMemberBinding="{Binding DONGIA}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
                         <GridViewColumn Header="Số lượng" DisplayMemberBinding="{Binding SOLUONG}"  Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
                     </GridView>
                 </ListView.View>
@@ -62,7 +80,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1" x:Name="helperField"/>
         </Grid>

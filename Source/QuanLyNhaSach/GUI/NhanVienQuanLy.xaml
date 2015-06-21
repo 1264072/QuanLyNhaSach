@@ -73,19 +73,19 @@
             <TabItem Header="Chức năng">
                 <TabItem.Content>
                     <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnNhapSach" Click="btnNhapSach_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\shop.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Nhập sách</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnThuTien" Click="btnThuTien_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\piggy-bank.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Thu tiền</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnChiTien" Click="btnChiTien_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\cash.png"/>
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Chi tiền</TextBlock>

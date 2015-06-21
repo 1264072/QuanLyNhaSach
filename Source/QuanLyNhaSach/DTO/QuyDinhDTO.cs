@@ -11,7 +11,7 @@ namespace DTO
         int nHAPTOITHIEU;
         int tONTRUOCNHAP;
         int tONSAUBAN;
-        double nOTOIDA;
+        decimal nOTOIDA;
         bool tHUQUANO;
 
         public bool THUQUANO
@@ -20,7 +20,7 @@ namespace DTO
             set { tHUQUANO = value; }
         }
 
-        public double NOTOIDA
+        public decimal NOTOIDA
         {
             get { return nOTOIDA; }
             set { nOTOIDA = value; }
