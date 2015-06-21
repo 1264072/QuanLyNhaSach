@@ -14,5 +14,10 @@ namespace BUS
         {
             return HoaDonDAO.LayDanhSach();
         }
+
+        static public bool AddHoaDon(HoaDonDTO hd, List<ChiTietHoaDonDTO> lst)
+        {
+            return HoaDonDAO.AddHoaDon(hd, lst);
+        }
     }
 }

@@ -9,6 +9,27 @@ namespace DAO
 {
     public class HoaDonDAO
     {
+        static public bool AddHoaDon(HoaDonDTO hd, List<ChiTietHoaDonDTO> lst)
+        {
+            using (BookStoreEntities bs = new BookStoreEntities())
+            {
+                ChiTietHoaDonDAO.AddChiTietHD(lst);
+                HOADON h = new HOADON()
+                {
+                    MAHD = hd.MAHD,
+                    MANV = hd.MANV,
+                    NGAYLAP = hd.NGAYLAP,
+                    TONGTIEN = hd.TONGTIEN,
+                    MAKH = hd.MAKH,
+                    TIENNO = hd.TIENNO,
+                    TIENTRA = hd.TIENTRA
+                };
+                bs.HOADONs.Add(h);
+                bs.SaveChanges();
+            }
+            return true;
+        }
+
         public static List<HoaDonDTO> LayDanhSach()
         {
             using (BookStoreEntities bs = new BookStoreEntities())

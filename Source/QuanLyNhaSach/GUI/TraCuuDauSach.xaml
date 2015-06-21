@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="GUI.TraCuuDauSach"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600" Loaded="UserControl_Loaded_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Grid.Row="0" Header="Thông tin cần tra cứu" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Tên sách cần tìm"/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="1" Name="txtTenDauSach"/>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Thể loại" Grid.Column="2"/>
+                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="3" Name="cbTheLoai" ItemsSource="{Binding}" DisplayMemberPath="TENTL" SelectedValuePath="MATL"/>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Giá" Grid.Column="4"/>
+                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Grid.Column="5" Name="cbPrice" SelectedValue="Tag">
+                    <ComboBoxItem Tag="49999">
+                        <TextBlock Text="Dưới 50.000" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="50001">
+                        <TextBlock Text="Trên 50.000" />
+                    </ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <Button Grid.Row="1" Width="100" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Margin="0,5,10,0" Click="Button_Click_1">
+            <DockPanel HorizontalAlignment="Left" LastChildFill="False">
+                <Image Source=".\Icons\Magnifying-glass.png" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <TextBlock Text="Tra cứu" VerticalAlignment="Center" />
+            </DockPanel>
+        </Button>
+        <GroupBox Grid.Row="2" Header="Danh sách các đầu sách">
+            <ListView Name="lstDS" ItemsSource="{Binding}" Height="150">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tên đầu sách" DisplayMemberBinding="{Binding  TENSACH}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Tên thể loại" DisplayMemberBinding="{Binding TENTL}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Giá đầu sách" DisplayMemberBinding="{Binding DONGIA}" Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                        <GridViewColumn Header="Số lượng" DisplayMemberBinding="{Binding SOLUONG}"  Width="{Binding ElementName=helperField, Path=ActualWidth}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+        <Grid Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="{Binding ElementName=col, Path=ActualWidth}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" x:Name="helperField"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -98,11 +100,20 @@
     <Compile Include="KhachHang.xaml.cs">
       <DependentUpon>KhachHang.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LapHoaDon.xaml.cs">
+      <DependentUpon>LapHoaDon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NhaCungCap.xaml.cs">
       <DependentUpon>NhaCungCap.xaml</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.xaml.cs">
       <DependentUpon>NhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienBanHang.xaml.cs">
+      <DependentUpon>NhanVienBanHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemChiTiet.xaml.cs">
+      <DependentUpon>ThemChiTiet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Them_ChinhSuaDauSach.xaml.cs">
       <DependentUpon>Them_ChinhSuaDauSach.xaml</DependentUpon>
@@ -118,6 +129,9 @@
     </Compile>
     <Compile Include="ThongTinNhanVien.xaml.cs">
       <DependentUpon>ThongTinNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuDauSach.xaml.cs">
+      <DependentUpon>TraCuuDauSach.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LapHoaDon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="NhaCungCap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,9 +205,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NhanVienBanHang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="NhanVienQuanLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemChiTiet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Them_ChinhSuaDauSach.xaml">
       <SubType>Designer</SubType>
@@ -210,6 +236,10 @@
     <Page Include="ThongTinNhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TraCuuDauSach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -269,6 +299,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\piggy-bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add1.png" />
+    <Resource Include="Icons\addressbook-add.png" />
+    <Resource Include="Icons\addressbook-delete.png" />
+    <Resource Include="Icons\addressbook-edit.png" />
+    <Resource Include="Icons\addressbook-search.png" />
+    <Resource Include="Icons\male-user-add.png" />
+    <Resource Include="Icons\male-user-edit.png" />
+    <Resource Include="Icons\male-user-info.png" />
+    <Resource Include="Icons\male-user-remove.png" />
+    <Resource Include="Icons\Order-history.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

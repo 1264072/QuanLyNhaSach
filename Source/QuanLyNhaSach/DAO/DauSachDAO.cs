@@ -79,5 +79,34 @@ namespace DAO
                 return bs.SaveChanges();
             }
         }
+
+        public static List<DauSachDTO> SearchDauSach(DauSachDTO ds)
+        {
+            using (BookStoreEntities bs = new BookStoreEntities())
+            {
+                List<DauSachDTO> lst = new List<DauSachDTO>();
+                List<DAUSACH> linq = new List<DAUSACH>();
+                if (ds.DONGIA < 50000)
+                    linq = bs.DAUSACHes.Where(d => d.TENSACH.Contains(ds.TENSACH) || d.MATL.Contains(ds.MATL) || d.DONGIA <= ds.DONGIA).ToList();
+                else
+                    linq = bs.DAUSACHes.Where(d => d.TENSACH.Contains(ds.TENSACH) || d.MATL.Contains(ds.MATL) || d.DONGIA >= ds.DONGIA).ToList();
+                foreach (DAUSACH d in linq)
+                {
+
+                    ds = new DauSachDTO
+                    {
+                        MADS = d.MADS,
+                        TENSACH = d.TENSACH,
+                        SOLUONG = d.SOLUONG,
+                        DONGIA = d.DONGIA,
+                        TACGIA = d.TACGIA,
+                        MATL = d.MATL,
+                        TENTL = d.THELOAI.TENTL
+                    };
+                    lst.Add(ds);
+                }
+                return lst;
+            }
+        }
     }
 }

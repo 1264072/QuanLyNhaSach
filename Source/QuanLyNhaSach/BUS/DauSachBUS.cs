@@ -29,5 +29,10 @@ namespace BUS
         {
             return DauSachDAO.XoaDauSach(DsDTO);
         }
+
+        public static List<DauSachDTO> SearchDauSach(DauSachDTO ds)
+        {
+            return DauSachDAO.SearchDauSach(ds);
+        }
     }
 }

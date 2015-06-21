@@ -14,5 +14,10 @@ namespace BUS
         {
             return ChiTietHoaDonDAO.LayChiTietTheoMaHD(HdDTO);
         }
+
+        static public bool AddChiTietHD(List<ChiTietHoaDonDTO> lst)
+        {
+            return ChiTietHoaDonDAO.AddChiTietHD(lst);
+        }
     }
 }

@@ -57,7 +57,9 @@ namespace GUI
                 string chucVu = NhanVienBUS.LayNhanVienTheoTaiKhoan(username).MACV;
                 if (chucVu == "NVBH")
                 {
-                    MessageBox.Show("Đây là nhân viên bán hàng");                    
+                    NhanVienBanHang obj = new NhanVienBanHang(NhanVienBUS.LayNhanVienTheoTaiKhoan(username));
+                    obj.Show();
+                    this.Close();
                 }
                 if (chucVu == "NVQL")
                 {

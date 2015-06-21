@@ -78,3 +78,11 @@ E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\DonHang.
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\Them_ChinhSuaDauSach.g.cs
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTietHoaDon.baml
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTietHoaDon.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\LapHoaDon.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienBanHang.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThemChiTiet.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\TraCuuDauSach.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\LapHoaDon.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\NhanVienBanHang.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThemChiTiet.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\TraCuuDauSach.g.cs
