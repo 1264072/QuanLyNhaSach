@@ -67,6 +67,12 @@ namespace GUI
                     obj.Show();
                     this.Close();
                 }
+                if (chucVu == "ADMIN")
+                {
+                    Admin obj = new Admin(NhanVienBUS.LayNhanVienTheoTaiKhoan(username), TaiKhoanBUS.LayTaiKhoan());
+                    obj.Show();
+                    this.Close();
+                }
 
             }
             else

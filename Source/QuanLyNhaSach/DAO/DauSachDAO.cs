@@ -89,10 +89,10 @@ namespace DAO
                 List<DAUSACH> lst = bs.DAUSACHes.ToList();
                 if (ten != "")
                 {
-                    string[] arr = ten.Split(' ');
+                    string[] arr = ten.ToLower().Split(' ');
                     for (int i = 0; i < arr.Length; i++)
                     {
-                        lst = lst.Where(s => s.TENSACH.Contains(arr[i])).ToList();
+                        lst = lst.Where(s => s.TENSACH.ToLower().Contains(arr[i])).ToList();
                     }
                 }
                 if (matl != "ALL")

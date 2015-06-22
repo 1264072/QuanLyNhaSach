@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -90,6 +93,10 @@
     </Compile>
     <Compile Include="ChiTietHoaDon.xaml.cs">
       <DependentUpon>ChiTietHoaDon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClosableTab.cs" />
+    <Compile Include="CloseableHeader.xaml.cs">
+      <DependentUpon>CloseableHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="DauSach.xaml.cs">
       <DependentUpon>DauSach.xaml</DependentUpon>
@@ -106,6 +113,7 @@
     <Compile Include="LapHoaDon.xaml.cs">
       <DependentUpon>LapHoaDon.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyDelegate.cs" />
     <Compile Include="NhaCungCap.xaml.cs">
       <DependentUpon>NhaCungCap.xaml</DependentUpon>
     </Compile>
@@ -178,11 +186,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChiTien.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ChiTietHoaDon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CloseableHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -335,6 +351,10 @@
     <Resource Include="Icons\male-user-info.png" />
     <Resource Include="Icons\male-user-remove.png" />
     <Resource Include="Icons\Order-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\data-download.png" />
+    <Resource Include="Icons\data-upload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

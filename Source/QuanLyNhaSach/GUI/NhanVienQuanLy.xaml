@@ -48,12 +48,6 @@
                                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Nhà cung cấp</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnNhanVien" Click="btnNhanVien_Click">
-                            <StackPanel>
-                                <Image Height="64" Width="64" Source=".\Icons\male.png"/>
-                                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Nhân viên</TextBlock>
-                            </StackPanel>
-                        </Button>
                         <Button Height="90" Width="80" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Name="btnDauSach" Click="btnDauSach_Click">
                             <StackPanel>
                                 <Image Height="64" Width="64" Source=".\Icons\addressbook.png"/>

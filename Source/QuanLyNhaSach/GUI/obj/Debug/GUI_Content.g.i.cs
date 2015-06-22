@@ -8,15 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/add1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/addressbook-add.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/addressbook-delete.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/addressbook-edit.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/addressbook-search.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/male-user-add.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/male-user-edit.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/male-user-info.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/male-user-remove.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/order-history.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/data-download.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/data-upload.png")]
 
 

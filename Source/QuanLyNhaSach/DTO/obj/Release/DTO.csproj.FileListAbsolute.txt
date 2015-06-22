@@ -1,0 +1,5 @@
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\DTO\bin\Release\DTO.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\DTO\bin\Release\DTO.pdb
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\DTO\obj\Release\DTO.csprojResolveAssemblyReference.cache
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\DTO\obj\Release\DTO.dll
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\DTO\obj\Release\DTO.pdb

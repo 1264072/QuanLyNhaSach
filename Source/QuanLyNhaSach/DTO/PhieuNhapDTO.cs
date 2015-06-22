@@ -12,8 +12,8 @@ namespace DTO
         DateTime nGAYLAP;
         string mANV;
         string mANCC;
-        double tONGTIEN;
-        double cONNO;
+        decimal tONGTIEN;
+        decimal cONNO;
         string tENNV;
         string tENNCC;
 
@@ -29,13 +29,13 @@ namespace DTO
             set { tENNV = value; }
         }
 
-        public double CONNO
+        public decimal CONNO
         {
             get { return cONNO; }
             set { cONNO = value; }
         }
 
-        public double TONGTIEN
+        public decimal TONGTIEN
         {
             get { return tONGTIEN; }
             set { tONGTIEN = value; }

@@ -15,6 +15,12 @@ namespace DTO
         string tACGIA;
         int sOLUONG;
         decimal dONGIA;
+        decimal tHANHTIEN;
+
+        public decimal THANHTIEN
+        {
+            get { return sOLUONG*dONGIA; }
+        }
 
         public decimal DONGIA
         {

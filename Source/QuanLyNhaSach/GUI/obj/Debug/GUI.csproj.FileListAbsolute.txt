@@ -92,3 +92,7 @@ E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThuTien.
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ThuTien.g.cs
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTien.baml
 E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\ChiTien.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\Admin.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\Admin.g.cs
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\CloseableHeader.baml
+E:\LTUDQL - C#\Project\QuanLyNhaSach\Source\QuanLyNhaSach\GUI\obj\Debug\CloseableHeader.g.cs

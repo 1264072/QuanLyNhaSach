@@ -22,6 +22,8 @@ namespace GUI
     public partial class TraCuuDauSach : UserControl
     {
         public int Option { get; set; }
+
+        public event Listener ThemDauSach = null;
         public TraCuuDauSach()
         {
             InitializeComponent();
@@ -62,7 +64,14 @@ namespace GUI
                     ListView lvw = sender as ListView;
                     if (lvw != null && lvw.SelectedItem != null)
                     {
-                        DauSachDTO ds = (DauSachDTO)lvw.SelectedItem;       
+                        DauSachDTO ds = (DauSachDTO)lvw.SelectedItem;
+
+                        QuyDinhDTO qd = QuyDinhBUS.LayQuyDinh();
+                        ds.SOLUONG = qd.NHAPTOITHIEU;
+                        if (ThemDauSach != null)
+                        {
+                            ThemDauSach(lvw.SelectedItem, new MyDelegate(ds));
+                        }
                     }
                 }
             }

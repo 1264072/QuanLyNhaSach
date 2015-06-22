@@ -11,8 +11,8 @@ namespace DTO
         string mAPN;
         int mADS;
         int sOLUONG;
-        double dONGIA;
-        double tHANHTIEN;
+        decimal dONGIA;
+        decimal tHANHTIEN;
         string tENDAUSACH;
         string tENTL;
         string tACGIA;
@@ -35,13 +35,13 @@ namespace DTO
             set { tENDAUSACH = value; }
         }
 
-        public double THANHTIEN
+        public decimal THANHTIEN
         {
             get { return tHANHTIEN; }
             set { tHANHTIEN = value; }
         }
 
-        public double DONGIA
+        public decimal DONGIA
         {
             get { return dONGIA; }
             set { dONGIA = value; }

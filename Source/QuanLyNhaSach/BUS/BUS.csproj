@@ -47,6 +47,7 @@
     <Compile Include="ChucVuBUS.cs" />
     <Compile Include="CongNoBUS.cs" />
     <Compile Include="DauSachBUS.cs" />
+    <Compile Include="DuLieuBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="NhaCungCapBUS.cs" />

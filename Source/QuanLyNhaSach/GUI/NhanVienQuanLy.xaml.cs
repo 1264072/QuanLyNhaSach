@@ -56,181 +56,163 @@ namespace GUI
         private void btnThongTinNhanVien_Click(object sender, RoutedEventArgs e)
         {
             ThongTinNhanVien obj = new ThongTinNhanVien(nhanVienDTO);
-            TabItem tabThongTin = new TabItem();
+            ClosableTab tabThongTin = new ClosableTab();
             tabThongTin.Name = "ThongTin";
-            tabThongTin.Header = "Thông tin nhân viên";
+            tabThongTin.Title = "Thông tin nhân viên";
             tabThongTin.Focusable = true;
             tabThongTin.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabThongTin.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThongTin.Name) != null)
             {
-                tabThongTin.IsSelected = true;
-                tabThongTin.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThongTin.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabThongTin);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThongTin.Name);
             }
         }
 
         private void btnDoiMatKhau_Click(object sender, RoutedEventArgs e)
         {
             DoiMatKhau obj = new DoiMatKhau(nhoMatKhauDTO);
-            TabItem tabMatKhau = new TabItem();
-            tabMatKhau.Header = "Đổi mật khẩu";
+            ClosableTab tabMatKhau = new ClosableTab();
+            tabMatKhau.Title = "Đổi mật khẩu";
             tabMatKhau.Name = "DoiMatKhau";
             tabMatKhau.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabMatKhau.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabMatKhau.Name) != null)
             {
-                tabMatKhau.IsSelected = true;
-                tabMatKhau.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabMatKhau.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabMatKhau);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabMatKhau.Name);
             }
         }
 
         private void btnKhachHang_Click(object sender, RoutedEventArgs e)
         {
             KhachHang obj = new KhachHang();
-            TabItem tabKhachHang = new TabItem();
+            ClosableTab tabKhachHang = new ClosableTab();
             tabKhachHang.Content = obj;
-            tabKhachHang.Header = "Quản lý khách hàng";
+            tabKhachHang.Title = "Quản lý khách hàng";
             tabKhachHang.Name = "KhachHang";
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabKhachHang.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabKhachHang.Name) != null)
             {
-                tabKhachHang.IsSelected = true;
-                tabKhachHang.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabKhachHang.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabKhachHang);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabKhachHang.Name);
             }
         }
 
         private void btnNhaCungCap_Click(object sender, RoutedEventArgs e)
         {
             NhaCungCap obj = new NhaCungCap();
-            TabItem tabNhaCungCap = new TabItem();
+            ClosableTab tabNhaCungCap = new ClosableTab();
             tabNhaCungCap.Name = "NhaCungCap";
-            tabNhaCungCap.Header = "Quản lý nhà cung cấp";
+            tabNhaCungCap.Title = "Quản lý nhà cung cấp";
             tabNhaCungCap.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhaCungCap.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhaCungCap.Name) != null)
             {
-                tabNhaCungCap.IsSelected = true;
-                tabNhaCungCap.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhaCungCap.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabNhaCungCap);
-            }
-        }
-
-        private void btnNhanVien_Click(object sender, RoutedEventArgs e)
-        {
-            NhanVien obj = new NhanVien();
-            TabItem tabNhanVien = new TabItem();
-            tabNhanVien.Name = "NhanVien";
-            tabNhanVien.Header = "Quản lý nhân viên";
-            tabNhanVien.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhanVien.Name)).SingleOrDefault() != null)
-            {
-                tabNhanVien.IsSelected = true;
-                tabNhanVien.Focus();
-            }
-            else
-            {
-                ContentControl.Items.Add(tabNhanVien);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhaCungCap.Name);
             }
         }
 
         private void btnDauSach_Click(object sender, RoutedEventArgs e)
         {
             DauSach obj = new DauSach();
-            TabItem tabDauSach = new TabItem();
+            ClosableTab tabDauSach = new ClosableTab();
             tabDauSach.Name = "DauSach";
-            tabDauSach.Header = "Quản lý đầu sách";
+            tabDauSach.Title = "Quản lý đầu sách";
             tabDauSach.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabDauSach.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDauSach.Name) != null)
             {
-                tabDauSach.IsSelected = true;
-                tabDauSach.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDauSach.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabDauSach);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDauSach.Name);
             }
         }
 
         private void btnDonHang_Click(object sender, RoutedEventArgs e)
         {
             DonHang obj = new DonHang();
-            TabItem tabDonHang = new TabItem();
-            tabDonHang.Header = "Quản lý đơn hàng";
+            ClosableTab tabDonHang = new ClosableTab();
+            tabDonHang.Title = "Quản lý đơn hàng";
             tabDonHang.Name = "DonHang";
             tabDonHang.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabDonHang.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDonHang.Name) != null)
             {
-                tabDonHang.IsSelected = true;
-                tabDonHang.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDonHang.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabDonHang);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabDonHang.Name);
             }
         }
 
         private void btnNhapSach_Click(object sender, RoutedEventArgs e)
         {
-            NhapSach obj = new NhapSach();
-            TabItem tabNhapSach = new TabItem();
-            tabNhapSach.Header = "Lập phiếu nhập";
+            NhapSach obj = new NhapSach(nhanVienDTO);
+            ClosableTab tabNhapSach = new ClosableTab();
+            tabNhapSach.Title = "Lập phiếu nhập";
             tabNhapSach.Name = "NhapSach";
             tabNhapSach.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabNhapSach.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhapSach.Name) != null)
             {
-                tabNhapSach.IsSelected = true;
-                tabNhapSach.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhapSach.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabNhapSach);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabNhapSach.Name);
             }
         }
 
         private void btnThuTien_Click(object sender, RoutedEventArgs e)
         {
             ThuTien obj = new ThuTien();
-            TabItem tabThuTien = new TabItem();
-            tabThuTien.Header = "Lập phiếu thu tiền";
+            ClosableTab tabThuTien = new ClosableTab();
+            tabThuTien.Title = "Lập phiếu thu tiền";
             tabThuTien.Name = "ThuTien";
             tabThuTien.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabThuTien.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThuTien.Name) != null)
             {
-                tabThuTien.IsSelected = true;
-                tabThuTien.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThuTien.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabThuTien);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabThuTien.Name);
             }
         }
 
         private void btnChiTien_Click(object sender, RoutedEventArgs e)
         {
             ChiTien obj = new ChiTien();
-            TabItem tabChiTien = new TabItem();
-            tabChiTien.Header = "Lập phiếu chi tiền";
+            ClosableTab tabChiTien = new ClosableTab();
+            tabChiTien.Title = "Lập phiếu chi tiền";
             tabChiTien.Name = "ChiTien";
             tabChiTien.Content = obj;
-            if (ContentControl.Items.Cast<TabItem>().Where(i => i.Name.Equals(tabChiTien.Name)).SingleOrDefault() != null)
+            if (ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabChiTien.Name) != null)
             {
-                tabChiTien.IsSelected = true;
-                tabChiTien.Focus();
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabChiTien.Name);
             }
             else
             {
                 ContentControl.Items.Add(tabChiTien);
+                ContentControl.SelectedItem = ContentControl.Items.OfType<TabItem>().SingleOrDefault(n => n.Name == tabChiTien.Name);
             }
         }
     }

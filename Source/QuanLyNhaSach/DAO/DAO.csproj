@@ -83,6 +83,7 @@
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
     <Compile Include="DauSachDAO.cs" />
+    <Compile Include="DuLieuDAO.cs" />
     <Compile Include="HOADON.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
